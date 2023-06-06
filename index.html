@@ -1,17 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vite App</title>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="/sass/style.scss">
+   <script>
+      let user = JSON.parse(localStorage.getItem('user'));
+      if (user === null) location.assign('pages/signin/');
+   </script>
 </head>
 
 <body>
+   <div class="wrapper">
+      <header class="header">
+         <div class="header__container container">
+            <nav class="header__nav">
+               <a href="#" class="header__text">Главная</a>
+               <a href="#" class="header__text">Мои кошельки</a>
+               <a href="#" class="header__text">Мои транзакции</a>
+            </nav>
+            <div class="header__user-menu">
+               <a href="#" class="header__text">alexadams@google.com</a>
 
+               <img src="./public/icons/log-out (1) 1.svg" alt="" height="18" width="18">
+            </div>
+         </div>
+      </header><!-- /header -->
+      <main class="main">
+         <div class="top-title container">
+            <div class="top-title__title">Добро пожаловать, Alex Adams!</div>
+            <div class="top-title__text">alexadams@google.com</div>
+         </div>
+         <div class="card-container container">
+            <div class="card-container__title">Мои кошельки</div>
+            <div class="card-container__wrapper">
+            </div>
+            <a href="#" class="card-container__link">Смотреть все кошельки</a>
+         </div>
+         <div class="transaction container">
+            <div class="transaction__container">
+               <div class="transaction__title">
+                  Последние транзакции
+               </div>
+               <table class="table">
+                  <thead>
+                     <tr>
+                        <th>ID</th>
+                        <th>Отправлено с кошелька</th>
+                        <th>Категория </th>
+                        <th>Сумма транзации</th>
+                        <th>Когда</th>
+                     </tr>
+                  </thead>
+                  <tbody>
 
-  <script type="module" src="/main.js"></script>
+                  </tbody>
+                  <tfoot></tfoot>
+               </table>
+               <a href="#" class="transaction__link">Смотреть все оплаты</a>
+            </div>
+         </div>
+      </main>
+   </div>
+   <script>
+      let texts = document.querySelectorAll('.header__user-menu .header__text ,.top-title__text');
+      texts.forEach(text=>{
+         text.innerText = user.email;
+
+      })
+   </script>
+   <script src="main.js"></script>
 </body>
 
 </html>

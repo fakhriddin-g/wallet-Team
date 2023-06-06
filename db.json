@@ -1,5 +1,13 @@
 {
-    "users": [],
-    "cards": [],
-    "transactions": []
+   "users": [
+      {
+         "firstname": "Shawkat",
+         "lastname": "Normurodov",
+         "email": "timanormu@gmail.com",
+         "password": "1234Shavkat",
+         "id": 1
+      }
+   ],
+   "cards": [],
+   "transacshen": []
 }

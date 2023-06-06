@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <link rel="icon" type="image/svg+xml" href="../assets/icons/xhml.svg">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+   <title>Регестрация</title>
+   <style>
+      * {
+         padding: 0;
+         margin: 0;
+         box-sizing: border-box;
+         font-family: Roboto;
+      }
+
+      .wrapper {
+         margin-top: 100px;
+      }
+
+      .regForm {
+         width: 400px;
+         margin: 0 auto;
+         display: flex;
+         flex-direction: column;
+         gap: 10px;
+         margin-top: 40px;
+      }
+
+      .wrapper h3 {
+         font-style: normal;
+         font-weight: 700;
+         font-size: 48px;
+         line-height: 59px;
+         text-align: center;
+      }
+
+      input {
+         background: #FFFFFF;
+         border: 1px solid #000000;
+         border-radius: 10px;
+         padding: 20px 25px;
+      }
+
+      input::placeholder {
+         font-family: 'Gilroy';
+         font-style: normal;
+         font-weight: 600;
+         font-size: 16px;
+         line-height: 20px;
+      }
+
+      button {
+         all: unset;
+         text-align: center;
+         cursor: pointer;
+         font-style: normal;
+         font-weight: 600;
+         font-size: 18px;
+         line-height: 22px;
+         color: white;
+         background: #0047FF;
+         border-radius: 10px;
+         padding: 15px 0;
+      }
+
+      a {
+         text-decoration: none;
+         font-style: normal;
+         font-weight: 700;
+         font-size: 18px;
+         line-height: 22px;
+         text-align: center;
+         color: #0047FF;
+         margin-top: 30px;
+      }
+
+      @media(max-width: 327px) {
+         .regForm {
+            width: 327px;
+         }
+      }
+
+      @media (max-width: 340px) {
+         .regForm {
+            width: 340px;
+         }
+      }
+
+      @media(max-width: 360px) {
+         .regForm {
+            width: 360px;
+         }
+      }
+      .error{
+         border: 2px solid red;
+      }
+      .info{
+         display: none;
+         justify-content: center;
+         align-items: center;
+         color: red;
+         background-color: #c4c4c4;
+         width: 50%;
+         height: 80px;
+         border-radius: 10px;
+         font-weight: 700;
+         font-size: 28px;
+         line-height: 28px;
+         position: absolute;
+         bottom: 0;
+         left: 50%;
+         transform: translateX(-50%);
+         margin: 0 auto;
+         transition: all .3s ease;
+         text-align: center;
+         opacity: 0;
+      }
+      </style>
+</head>
+
+<body>
+   <div class="wrapper">
+      <h3>Регистрация</h3>
+      <form name="reg" class="regForm">
+         <input type="text" placeholder="Имя" id="firstname" name="firstname">
+         <input type="text" placeholder="Фамилия" id="lastname" name="lastname">
+         <input type="email" placeholder="Почта" id="email" name="email">
+         <input type="password" placeholder="Пароль" id="password" name="password">
+         <button>Продолжить</button>
+         <a href="../signin/">Войти в аккаунт</a>
+      </form>
+      <div class="info">
+         <p>Все поля обязательны для правельного заполнения</p>
+      </div>
+   </div>
+   <script src="index.js" type="module"></script>
+</body>
+
+</html>
