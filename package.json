@@ -4,12 +4,16 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently \"vite\" \"json-server -p 5050 -w db.json\"",
     "build": "vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
     "swiper": "^9.3.2",
     "vite": "^4.3.9"
+  },
+  "dependencies": {
+    "concurrently": "^8.1.0",
+    "json-server": "^0.17.3"
   }
 }
