@@ -1,0 +1,226 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=No75to+Sans+KR:wght@100;300;400;500;700;900&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+/*���������*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-family: "Montserrat"; }
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+:focus,
+:active {
+  outline: none; }
+
+a:focus,
+a:active {
+  outline: none; }
+
+nav,
+footer,
+header,
+aside {
+  display: block; }
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+input,
+button,
+textarea {
+  font-family: inherit; }
+
+input::-ms-clear {
+  display: none; }
+
+button {
+  cursor: pointer; }
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0; }
+
+a,
+a:visited {
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: none; }
+
+ul li {
+  list-style: none; }
+
+img {
+  vertical-align: top; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit; }
+
+/*--------------------*/
+body {
+  padding-top: 110px; }
+
+h1 {
+  font-weight: 700;
+  font-size: 48px;
+  margin-bottom: 11px; }
+
+#email {
+  font-weight: 700;
+  font-size: 18px;
+  color: #0047FF;
+  margin-bottom: 74px; }
+
+a {
+  color: inherit; }
+
+header {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  padding: 25px;
+  background-color: #F0F0F0;
+  -webkit-transition: .5s ease;
+  -o-transition: .5s ease;
+  transition: .5s ease; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto; }
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 16px; }
+
+.links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  gap: 21px; }
+
+.log_out {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  gap: 21px; }
+
+.myWallets {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 24px;
+  margin: 21px 0; }
+
+.transactions {
+  margin: 21px 0; }
+  .transactions th,
+  .transactions td {
+    padding: 20px 0;
+    padding-left: 162px; }
+    .transactions th:nth-child(1),
+    .transactions td:nth-child(1) {
+      padding-left: 0; }
+  .transactions th {
+    text-align: start;
+    font-weight: 600;
+    font-size: 14px;
+    color: #B9C0D1; }
+  .transactions td {
+    font-weight: 500;
+    border-bottom: 1px solid #B9C0D1; }
+
+.card {
+  width: 282px;
+  height: 160px;
+  background: -webkit-linear-gradient(5.63deg, #380036 2.27%, #0CBABA 92.26%);
+  background: -o-linear-gradient(5.63deg, #380036 2.27%, #0CBABA 92.26%);
+  background: linear-gradient(84.37deg, #380036 2.27%, #0CBABA 92.26%);
+  border-radius: 15px;
+  padding: 17px 23px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  color: #FFF;
+  cursor: pointer; }
+  .card h3 {
+    font-weight: 0;
+    font-size: 24px; }
+  .card p {
+    font-weight: 700;
+    font-size: 14px; }
+
+h2 {
+  font-weight: 500;
+  font-size: 24px; }
+
+.top {
+  margin-bottom: 74px; }
+
+main button {
+  background: inherit;
+  font-size: 16px;
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+  color: #0047FF; }
+
+.hide {
+  min-width: 20px;
+  min-height: 20px;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  font-weight: 500; }

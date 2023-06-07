@@ -1,16 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style/client.css">
     <title>Document</title>
 </head>
+
 <body>
-    <center>
-        <h1>Catalog</h1>
-        <a href="/">home</a>
-        <a href="/pages/about/">about</a>
-    </center>
+    <div class="container">
+        <h1>Добро пожаловать, <span id="name">Alex Adams!</span></h1>
+        <p id="email">alexadams@google.com</p>
+        <main>
+            <div class="top">
+                <h2>Мои кошельки</h2>
+                <div class="myWallets">
+                    <div class="card">
+                        <h3>visa</h3>
+                        <p>rub</p>
+                    </div>
+                    <div class="card">
+                        <h3>visa</h3>
+                        <p>rub</p>
+                    </div>
+                    <div class="card">
+                        <h3>visa</h3>
+                        <p>rub</p>
+                    </div>
+                    <div class="card">
+                        <h3>visa</h3>
+                        <p>rub</p>
+                    </div>
+                </div>
+                <button id="allWallets">Смотреть все кошельки</button>
+            </div>
+            <div class="bottom">
+                <h2>Последние транзакции</h2>
+                <div class="transactions">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Отправлено с кошелька</th>
+                                <th>Категория </th>
+                                <th>Сумма транзации</th>
+                                <th>Когда</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <button id="allPay">Смотреть все оплаты</button>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="./client.js"></script>
 </body>
+
 </html>
