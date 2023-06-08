@@ -1,97 +1,145 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+* {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  all: unset;
+  background-color: blue;
+  padding: 5px 10px;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 14px;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+li {
+  list-style: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form input {
+  width: 300px;
+  padding: 5px 10px;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+.log-in__btn,
+.sign-up__btn {
+  background-color: inherit;
+  color: blue;
+}
+
+/* Home Page */
+/* Header */
+.header {
+  background-color: #F0F0F0;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.nav-list,
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Welcome */
+.welcome-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 44px 0 74px;
+}
+
+.welcom-email {
+  color: blue;
+  cursor: pointer;
+}
+
+/* Wallet */
+.wallet-box {
+  width: 282px;
+  height: 160px;
+  background-color: rgb(208, 208, 208);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 18px 23px;
+  margin-top: 24px;
+  margin-bottom: 18px;
+}
+
+.all-wallets {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.show {
+  display: inline-block;
+  font-size: 18px;
+  color: blue;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* transaction */
+.transaction-content {
+  margin: 74px 0;
+}
+
+table {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+th {
+  padding: 5px 0;
+  text-align: start;
+  color: gray;
+}
+
+table td {
+  padding: 20px 0;
+  border-bottom: 1px solid blue;
+  /* box-shadow: 0px 3px rgb(0, 0, 255, .1); */
 }

@@ -1,5 +1,20 @@
 {
-  "users": [],
+  "users": [
+    {
+      "email": "azza.fayzieva@gmail.com",
+      "name": "Sarboz",
+      "surname": "Fakhriddin",
+      "password": "123",
+      "id": 1
+    },
+    {
+      "email": "azza.fayzieva@gmail.com",
+      "name": "Sarboz",
+      "surname": "Fakhriddin",
+      "password": "123",
+      "id": 2
+    }
+  ],
   "cards": [],
   "transactions": []
 }
