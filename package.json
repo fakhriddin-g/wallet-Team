@@ -15,5 +15,17 @@
   "dependencies": {
     "concurrently": "^8.1.0",
     "json-server": "^0.17.3"
-  }
+  },
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fakhriddin-g/wallet-Team.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fakhriddin-g/wallet-Team/issues"
+  },
+  "homepage": "https://github.com/fakhriddin-g/wallet-Team#readme",
+  "description": ""
 }
