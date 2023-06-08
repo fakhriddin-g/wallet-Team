@@ -59,7 +59,7 @@ about.onsubmit = (e) => {
         })
 
 
-        location.assign("../catalog/index.html")
+        location.assign("/pages/catalog/")
         about.reset()
 
 

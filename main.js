@@ -43,7 +43,7 @@ reg.onsubmit = (e) => {
 
         localStorage.setItem("valid", JSON.stringify(user))
 
-        location.assign("pages/about/index.html")
+        location.assign("pages/about/")
 
         console.log(user);
         reg.reset()
