@@ -11,7 +11,7 @@ const getUser = () => {
         .then(res => res.json())
 }
 
-// inpEmail.value = userData.email
+inpEmail.value = userData.email
 
 
 let inps = document.querySelectorAll('input')
