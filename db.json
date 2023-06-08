@@ -1,5 +1,55 @@
 {
-    "users": [],
-    "cards": [],
-    "transactions": []
+  "users": [
+    {
+      "id": 0.5135756069967985,
+      "email": "amalabdurahmonov777@gmail.com",
+      "name": "amal",
+      "surname": "aaaaaaaaaaaaaaa",
+      "password": "2424"
+    },
+    {
+      "id": 0.9063090642275309,
+      "email": "amalabdurahmonov427@gmail.com",
+      "name": "awdfa",
+      "surname": "aaaaaaaaaaaaaaa",
+      "password": "1111"
+    },
+    {
+      "id": 0.2394978679605193,
+      "email": "amalabdurahmonov427@gmail.com",
+      "name": "amal",
+      "surname": "aaaaaaaaaaaaaaa",
+      "password": "1111"
+    },
+    {
+      "id": 0.23173544338275032,
+      "email": "amalabdurahmonov427@gmail.com",
+      "name": "amal",
+      "surname": "aaaaaaaaaaaaaaa",
+      "password": "1111"
+    },
+    {
+      "id": 0.38432708021455664,
+      "email": "amalabdurahmonov777@gmail.com",
+      "name": "wadawd",
+      "surname": "asdae",
+      "password": "3333"
+    },
+    {
+      "id": 0.24558063014776765,
+      "email": "amalabdurahmonov427@gmail.com",
+      "name": "amal",
+      "surname": "aaaaaaaaaaaaaaa",
+      "password": "4444"
+    },
+    {
+      "id": 0.5219482215704885,
+      "email": "amalabdurahmonov777@gmail.com",
+      "name": "amal",
+      "surname": "asdae",
+      "password": "2222"
+    }
+  ],
+  "cards": [],
+  "transactions": []
 }
