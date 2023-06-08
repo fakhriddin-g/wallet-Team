@@ -2,6 +2,8 @@ let signBtn = document.querySelector('.form-btn')
 let logBtn = document.querySelector('.log-in__btn')
 let inputs = document.querySelectorAll('input')
 let form = document.forms.form
+let emailInput = document.querySelector('.email')
+
 
 // API Function
 let baseURL = "http://localhost:5050"
@@ -42,26 +44,34 @@ inputs.forEach(input => {
 
   signBtn.onclick = () => {
 
-    let data = {}
+    
 
-    let fm = new FormData(form)
-
-    fm.forEach((key, value) => {
-      data[value] = key
-    })
-
-    localStorage.setItem('title-object', JSON.stringify(data))
 
     if (input.value > 0) {
       location.assign('/pages/login/')
+      save()
     } else {
       alert('Fill all the gaps')
     }
 
-    createNewTask(data)
 
   }
 })
+
+function save() {
+
+  let data = {}
+
+  let fm = new FormData(form)
+
+  fm.forEach((key, value) => {
+    data[value] = key
+  })
+
+  localStorage.setItem('title-object', JSON.stringify(data))
+
+  createNewTask(data)
+}
 
 logBtn.onclick = () => {
   location.assign('/pages/login/')

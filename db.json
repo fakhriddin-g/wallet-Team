@@ -13,6 +13,27 @@
       "surname": "Fakhriddin",
       "password": "123",
       "id": 2
+    },
+    {
+      "email": "azza.fayzieva@gmail.com",
+      "name": "Sarboz",
+      "surname": "Fakhriddin",
+      "password": "",
+      "id": 3
+    },
+    {
+      "email": "davronsoevr7@gmail.com",
+      "name": "Sarboz",
+      "surname": "Fakhriddin",
+      "password": "1234",
+      "id": 4
+    },
+    {
+      "email": "gayosiddinov98@gmail.com",
+      "name": "Sarboz",
+      "surname": "Fakhriddin",
+      "password": "1234",
+      "id": 5
     }
   ],
   "cards": [],

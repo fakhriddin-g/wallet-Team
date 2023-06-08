@@ -28,7 +28,8 @@ inputs.forEach(input => {
 
 logBtn.onclick = () => {
   if (logPassword.value === localData.password || logEmail.value === localData.email) {
-    location.assign('home.html')
+    alert('Good')
+    // location.assign('home.html')
   } else {
     alert('error')
   }
