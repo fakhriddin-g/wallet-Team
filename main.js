@@ -1,25 +1,13 @@
+import { postData } from "./modules/http.request.js";
 import { validate } from "./modules/regex.js";
 let reg = document.forms.reg
 let inputs = reg.querySelectorAll('input')
 let btn = reg.querySelector('button')
 let show = reg.querySelector('.show')
 let pass = reg.querySelector('#pass')
+let loader = '<div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>'
 
-let base_url = "http://localhost5050"
-const getAllData = async () => {
-    try {
-        const res = await fetch(base_url + "/users")
-        if (res.status === 200 || res.status === 201) {
-            const data = await res.json()
-            reload(data, tbody)
-        }
-    } catch (e) {
-        alert("error " + e)
-    }
-}
-
-getAllData()
-
+let base_url = "http://localhost:5050"
 
 inputs.forEach(inp => {
     let patterns = {
@@ -56,11 +44,13 @@ reg.onsubmit = (e) => {
         fm.forEach((value, key) => {
             user[key] = value
         })
-
-        localStorage.setItem("valid", JSON.stringify(user))
-
+        btn.innerHTML = loader
+        localStorage.setItem("user", JSON.stringify(user))
+        postData("http://localhost:5050/users", user)
+            .then(res => {
+                btn.innerHTML = "Submit"
+            })
         location.assign("pages/about/")
-        createNewStudent(user)
         console.log(user);
         reg.reset()
     }
@@ -74,22 +64,5 @@ show.onclick = () => {
         show.style.backgroundImage = `url("https://go.wepro.uz/_nuxt/img/monkey-closed.397bfe9.png")`
         pass.type = "password"
         show.style.width = "30px"
-    }
-}
-
-const createNewStudent = async (body) => {
-    try {
-        const res = await fetch(base_url + "/users", {
-            method: "post",
-            body: JSON.stringify(body),
-            headers: {
-                "Content-Type": "application/json"
-            }
-        })
-        if (res.status === 200 || res.status === 201) {
-            getAllData()
-        }
-    } catch (e) {
-        alert("error" + e)
     }
 }

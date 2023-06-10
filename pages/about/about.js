@@ -6,7 +6,7 @@ let pass = about.querySelector('#pass')
 let btn = about.querySelector('button')
 let show = about.querySelector('.show')
 
-let localedData = JSON.parse(localStorage.getItem("valid"))
+let localedData = JSON.parse(localStorage.getItem("user"))
 
 inp.value = localedData.email
 
