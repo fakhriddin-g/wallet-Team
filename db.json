@@ -1,13 +1,51 @@
 {
   "users": [
     {
-      "name": "Daler",
-      "surname": "Sharifkulov",
-      "email": "dsarifkulo021@gmail.com",
+      "name": "Камрон",
+      "surname": "Хасанзода",
+      "email": "kamron@gmail.com",
       "password": "1234",
       "id": 1
     }
   ],
   "cards": [],
-  "transactions": []
+  "transactions": [],
+  "main": [
+    {
+      "id": 1,
+      "name": "Visa",
+      "money": "USD",
+      "category": "car",
+      "buying": "50000",
+      "date": "23 September",
+      "color": "linear-gradient(84.37deg, #D7816A 2.27%, #BD4F6C 92.26%)"
+    },
+    {
+      "id": "2",
+      "name": "Kiwi",
+      "money": "RUB",
+      "category": "food",
+      "buying": "1000",
+      "date": "7May",
+      "color": "linear-gradient(84.37deg, #5F0A87 2.27%, #A4508B 92.26%)"
+    },
+    {
+      "id": "3",
+      "name": "Xumo",
+      "money": "USZ",
+      "category": "electricity",
+      "buying": "3278000",
+      "date": "17 June",
+      "color": "linear-gradient(84.37deg, #20BF55 2.27%, #01BAEF 92.26%)"
+    },
+    {
+      "id": "4",
+      "name": "VISA",
+      "money": "USD",
+      "category": "home",
+      "buying": "10000",
+      "date": "19 January",
+      "color": "linear-gradient(84.37deg, #380036 2.27%, #0CBABA 92.26%)"
+    }
+  ]
 }
