@@ -28,7 +28,7 @@ form.onsubmit = (e) => {
       if (res?.data?.length === 0) {
         alert('Urer not found')
       } else {
-        if (res?.deta[0]?.password === data.password) {
+        if (res?.data[0]?.password === data.password) {
           localStorage.setItem('user', JSON.stringify(res?.data[0]))
           location.assign('/')
         } else {
