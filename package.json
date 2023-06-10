@@ -9,12 +9,11 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "axios": "^1.4.0",
+    "concurrently": "^8.2.0",
+    "json-server": "^0.17.3",
     "swiper": "^9.3.2",
     "vite": "^4.3.9"
-  },
-  "dependencies": {
-    "concurrently": "^8.1.0",
-    "json-server": "^0.17.3"
   },
   "main": "main.js",
   "repository": {

@@ -15,6 +15,7 @@ export default defineConfig({
         catalog: resolve(__dirname, 'pages/catalog/index.html'),
         transactions: resolve(__dirname, 'pages/transactions/index.html'),
         login: resolve(__dirname, 'pages/login/index.html'),
+        signup: resolve(__dirname, 'pages/signup/index.html'),
       },
     },
   },

@@ -79,6 +79,10 @@ a {
   gap: 20px;
 }
 
+.profile-img {
+  cursor: pointer;
+}
+
 /* Welcome */
 .welcome-box {
   display: flex;
