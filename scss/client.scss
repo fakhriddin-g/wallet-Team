@@ -240,3 +240,70 @@ main {
     left: 0;
     font-weight: 500;
 }
+
+.modal_bg {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: #000000aa;
+    height: 100vh;
+    z-index: 2;
+    display: none;
+    opacity: 0;
+    transition: .3s;
+}
+
+.modal {
+    h1 {
+        all: unset;
+        font-size: 40px;
+        font-weight: 600;
+    }
+
+    position: fixed;
+    width: 600px;
+    height: 150px;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+    border-radius: 20px;
+    z-index: 2;
+
+    scale: 0;
+    opacity: 0;
+    transition: .3s;
+
+    button {
+        all: unset;
+        cursor: pointer;
+        background-color: #efa0a0;
+        padding: 10px;
+        font-weight: 600;
+        border-radius: 10px;
+    }
+}
+
+
+.x_style {
+    cursor: pointer;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    font-weight: 600;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #000;
+    top: 15px;
+    right: 15px;
+}

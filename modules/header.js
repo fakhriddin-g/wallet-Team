@@ -1,3 +1,5 @@
+import { modal, modal_bg } from "../pages/catalog/client"
+
 export function header() {
     let body = document.body
     let localedData = JSON.parse(localStorage.getItem("user"))
@@ -7,7 +9,7 @@ export function header() {
     let links = document.createElement("div")
     let hide = document.createElement("button")
     let obj = {
-        'Главная': "/",
+        'Главная': "/pages/catalog/",
         'Мои кошельки': "/pages/addWallet/",
         'Мои транзакции': "/pages/addTransactions/"
     }
@@ -37,7 +39,13 @@ export function header() {
     body.append(header)
 
     logOut.onclick = () => {
-        location.assign("/")
+        modal.style.display = "flex"
+        modal_bg.style.display = "block"
+        setTimeout(() => {
+            modal.style.scale = "1"
+            modal.style.opacity = "1"
+            modal_bg.style.opacity = "1"
+        }, 300);
     }
     hide.onclick = () => {
         if (hide.innerHTML === "X") {

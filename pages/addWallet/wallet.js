@@ -22,7 +22,6 @@ inp.value = localedData.email
 pass.onkeyup = () => validate(patterns[inp.name], inp)
 
 
-
 about.onsubmit = (e) => {
 
     e.preventDefault()

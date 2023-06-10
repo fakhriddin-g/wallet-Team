@@ -101,8 +101,6 @@ header {
   width: 100%;
   padding: 25px;
   background-color: #F0F0F0;
-  -webkit-transition: .5s ease;
-  -o-transition: .5s ease;
   transition: .5s ease; }
 
 .container {
@@ -110,50 +108,27 @@ header {
   margin: 0 auto; }
 
 nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   font-weight: 500;
   font-size: 16px; }
 
 .links {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   gap: 21px; }
 
 .log_out {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   gap: 21px; }
 
 .myWallets {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   gap: 24px;
   margin: 21px 0; }
@@ -179,20 +154,11 @@ nav {
 .card {
   width: 282px;
   height: 160px;
-  background: -webkit-linear-gradient(5.63deg, #380036 2.27%, #0CBABA 92.26%);
-  background: -o-linear-gradient(5.63deg, #380036 2.27%, #0CBABA 92.26%);
   background: linear-gradient(84.37deg, #380036 2.27%, #0CBABA 92.26%);
   border-radius: 15px;
   padding: 17px 23px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
   color: #FFF;
   cursor: pointer; }
@@ -213,7 +179,6 @@ h2 {
 main button {
   background: inherit;
   font-size: 16px;
-  -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
   color: #0047FF; }
 
@@ -224,3 +189,61 @@ main button {
   bottom: -20px;
   left: 0;
   font-weight: 500; }
+
+.modal_bg {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: #000000aa;
+  height: 100vh;
+  z-index: 2;
+  display: none;
+  opacity: 0;
+  transition: .3s; }
+
+.modal {
+  position: fixed;
+  width: 600px;
+  height: 150px;
+  background-color: #fff;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 20px;
+  border-radius: 20px;
+  z-index: 2;
+  scale: 0;
+  opacity: 0;
+  transition: .3s; }
+  .modal h1 {
+    all: unset;
+    font-size: 40px;
+    font-weight: 600; }
+  .modal button {
+    all: unset;
+    cursor: pointer;
+    background-color: #efa0a0;
+    padding: 10px;
+    font-weight: 600;
+    border-radius: 10px; }
+
+.x_style {
+  cursor: pointer;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+  font-weight: 600;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #000;
+  top: 15px;
+  right: 15px; }

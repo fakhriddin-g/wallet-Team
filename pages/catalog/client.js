@@ -1,15 +1,33 @@
 import { header } from "../../modules/header.js";
 
+
 let localedData = JSON.parse(localStorage.getItem("user"))
 let name = document.querySelector("#name")
+export let modal = document.querySelector(".modal")
+export let modal_bg = document.querySelector(".modal_bg")
+export let close = document.querySelectorAll(".close")
+let sign_out = document.querySelector(".modal button")
 let email = document.querySelector("#email")
 let myWallets = document.querySelector(".myWallets")
 let tbody = document.querySelector("tbody")
 
+sign_out.onclick = () => {
+    location.assign("/")
+}
 
+close.forEach(btn => {
+    btn.onclick = () => {
+        modal.style.opacity = "0"
+        modal_bg.style.opacity = "0"
+        modal.style.scale = "0"
+        setTimeout(() => {
+            modal.style.display = "none"
+            modal_bg.style.display = "none"
+        }, 300);
+    }
+})
 let allWallets = document.querySelector("#allWallets")
 let allPay = document.querySelector("#allPay")
-
 
 const wallets = [
     {
