@@ -1,51 +1,47 @@
 {
   "users": [
     {
-      "name": "Камрон",
-      "surname": "Хасанзода",
-      "email": "kamron@gmail.com",
-      "password": "1234",
+      "firstname": "Shawkat",
+      "lastname": "Normurodov",
+      "email": "timanormu@gmail.com",
+      "password": "1234Shavkat",
       "id": 1
+    },
+    {
+      "firstname": "Daler",
+      "lastname": "Sharifkulov",
+      "email": "dsarifkulo021@gmail.com",
+      "password": "1234Daler",
+      "id": 2
     }
   ],
-  "cards": [],
-  "transactions": [],
-  "main": [
+  "cards": [
     {
-      "id": 1,
-      "name": "Visa",
-      "money": "USD",
-      "category": "car",
-      "buying": "50000",
-      "date": "23 September",
-      "color": "linear-gradient(84.37deg, #D7816A 2.27%, #BD4F6C 92.26%)"
+      "walletName": "123",
+      "Currency": "123",
+      "userId": 1,
+      "lang": "RUB",
+      "color": "linear-gradient(84.37deg, #3044E3 2.27%, #7317AE 92.26%)",
+      "id": 1
     },
     {
-      "id": "2",
-      "name": "Kiwi",
-      "money": "RUB",
-      "category": "food",
-      "buying": "1000",
-      "date": "7May",
-      "color": "linear-gradient(84.37deg, #5F0A87 2.27%, #A4508B 92.26%)"
-    },
+      "walletName": "mastercard",
+      "Currency": "EURO",
+      "userId": 2,
+      "lang": "RUB",
+      "color": "linear-gradient(84.37deg, #66E41D 2.27%, #5D9C61 92.26%)",
+      "id": 2
+    }
+  ],
+  "transacshen": [
     {
-      "id": "3",
-      "name": "Xumo",
-      "money": "USZ",
-      "category": "electricity",
-      "buying": "3278000",
-      "date": "17 June",
-      "color": "linear-gradient(84.37deg, #20BF55 2.27%, #01BAEF 92.26%)"
-    },
-    {
-      "id": "4",
-      "name": "VISA",
-      "money": "USD",
-      "category": "home",
-      "buying": "10000",
-      "date": "19 January",
-      "color": "linear-gradient(84.37deg, #380036 2.27%, #0CBABA 92.26%)"
+      "fromWallet": "123",
+      "price": "123456",
+      "categories": "auto",
+      "userId": 1,
+      "time": "4 дня назад",
+      "welletId": 1,
+      "id": 1
     }
   ]
 }

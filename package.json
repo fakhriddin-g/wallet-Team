@@ -1,19 +1,20 @@
 {
-  "name": "banking",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "concurrently \"vite\" \"json-server -p 5050 -w db.json\"",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "devDependencies": {
-    "axios": "^1.4.0",
-    "concurrently": "^8.1.0",
-    "json-server": "^0.17.3",
-    "sass": "^1.63.2",
-    "swiper": "^9.3.2",
-    "vite": "^4.3.9"
-  }
+   "name": "bank-project",
+   "private": true,
+   "version": "0.0.0",
+   "type": "module",
+   "scripts": {
+      "dev": "concurrently \"vite\" \"json-server -p 5050 -w db.json\"",
+      "build": "vite build",
+      "preview": "vite preview"
+   },
+   "devDependencies": {
+      "json-server": "^0.17.3",
+      "vite": "^4.3.9"
+   },
+   "dependencies": {
+      "axios": "^1.4.0",
+      "concurrently": "^8.1.0",
+      "sass": "^1.62.1"
+   }
 }
