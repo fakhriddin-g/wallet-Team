@@ -1,13 +1,32 @@
 {
-   "users": [
-      {
-         "firstname": "Shawkat",
-         "lastname": "Normurodov",
-         "email": "timanormu@gmail.com",
-         "password": "1234Shavkat",
-         "id": 1
-      }
-   ],
-   "cards": [],
-   "transacshen": []
+  "users": [
+    {
+      "firstname": "Shawkat",
+      "lastname": "Normurodov",
+      "email": "timanormu@gmail.com",
+      "password": "1234Shavkat",
+      "id": 1
+    }
+  ],
+  "cards": [
+    {
+      "walletName": "123",
+      "Currency": "123",
+      "userId": 1,
+      "lang": "RUB",
+      "color": "linear-gradient(84.37deg, #3044E3 2.27%, #7317AE 92.26%)",
+      "id": 1
+    }
+  ],
+  "transacshen": [
+    {
+      "fromWallet": "123",
+      "price": "123456",
+      "categories": "auto",
+      "userId": 1,
+      "time": "4 дня назад",
+      "welletId": 1,
+      "id": 1
+    }
+  ]
 }

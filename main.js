@@ -1,68 +1,28 @@
-
+import { getData } from "./modules/http";
 let wrapper = document.querySelector('.card-container__wrapper');
 let body = document.querySelector('tbody');
 
-//arrays
-let data = [
-   {
-      title: 'Visa',
-      lang: "RUB",
-      color: 'linear-gradient(84.37deg, #D7816A 2.27%, #BD4F6C 92.26%)',
-   },
-   {
-      title: 'Visa',
-      lang: "RUB",
-      color: 'linear-gradient(84.37deg, #5F0A87 2.27%, #A4508B 92.26%)',
-   },
-   {
-      title: 'Visa',
-      lang: "RUB",
-      color: 'linear-gradient(84.37deg, #20BF55 2.27%, #01BAEF 92.26%)',
-   },
-   {
-      title: 'Visa',
-      lang: "RUB",
-      color: 'linear-gradient(84.37deg, #380036 2.27%, #0CBABA 92.26%)',
-   },
-]
-let arr_table = [
-   {
-      type: "VISA",
-      categories: "Автомобиль",
-      price: "414,000,000",
-      time: "4 дня назад",
-   },
-   {
-      type: "VISA",
-      categories: "Автомобиль",
-      price: "414,000,000",
-      time: "4 дня назад",
-   },
-   {
-      type: "VISA",
-      categories: "Автомобиль",
-      price: "414,000,000",
-      time: "4 дня назад",
-   },
-   {
-      type: "VISA",
-      categories: "Автомобиль",
-      price: "414,000,000",
-      time: "4 дня назад",
-   },
-   {
-      type: "VISA",
-      categories: "Автомобиль",
-      price: "414,000,000",
-      time: "4 дня назад",
-   },
-];
+//вызовы
+getData('/cards/')
+   .then(res => {
+      if (res.status == 200 || res.status === 201) {
+         if (wrapper !== null) reload(res.data.slice(0, 4), wrapper);
+      }
+   })
+
+getData('/transacshen/')
+   .then(res => {
+      if (res.status == 200 || res.status === 201) {
+         if (body !== null) reloadTable(res.data.slice(0, 5), body);
+      }
+   })
+
+
 
 //function
-function reload(arr, place) {
+export function reload(arr, place) {
    let doc = document
    place.innerHTML = '';
-
    for (let card of arr) {
       let div = doc.createElement('div');
       let title = doc.createElement('div');
@@ -72,15 +32,15 @@ function reload(arr, place) {
       title.classList.add('item__title');
       lang.classList.add('item__lang');
       //inner
-      title.innerHTML = card.title;
+      title.innerHTML = card.walletName;
       lang.innerHTML = card.lang;
-      div.style.background = card.color;
+      div.style.background = card.color
       //append
       div.append(title, lang);
       place.append(div);
    }
 }
-function reloadTable(res, body) {
+export function reloadTable(res, body) {
    let doc = document;
    body.innerHTML = ''
    let n = 1;
@@ -91,7 +51,7 @@ function reloadTable(res, body) {
          if (i === 0) {
             td.innerText = n;
          } else if (i === 1) {
-            td.innerText = data.type;
+            td.innerText = data.fromWallet;
          } else if (i === 2) {
             td.innerText = data.categories;
          } else if (i === 3) {
@@ -105,7 +65,3 @@ function reloadTable(res, body) {
       n++;
    }
 }
-
-//вызовы
-reload(data, wrapper)
-reloadTable(arr_table, body)
