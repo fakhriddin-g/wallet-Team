@@ -50,16 +50,18 @@ console.log(userData);
 
 
 function header() {
-    let pHeaderWords = ['Главная', 'Мои кошельки', 'Мои транзакции']
+    let pHeaderWords = ['Главная', 'Мои кошельки']
     let leftHeader = document.createElement('div')
     let rightHeader = document.createElement('div')
     let pRightHeader = document.createElement('p')
     let imgRightHeader = document.createElement('img')
     let pWords
+    let tranz = document.createElement('p')
+    tranz.innerHTML = 'Мои транзакции'
     for (let index = 1; index <= pHeaderWords.length; index++) {
         pWords = document.createElement('p')
         pWords.innerHTML = pHeaderWords[index - 1]
-        leftHeader.append(pWords)
+        leftHeader.append(pWords, tranz)
     }
     pRightHeader.innerHTML = userData.email
     imgRightHeader.src = '../icon/log-out.svg'
@@ -77,6 +79,15 @@ function header() {
         if(con == true) {
             location.assign("/pages/about/")
         }
+    }
+
+
+    pWords.onclick = () => {
+        location.assign('/pages/wallet/')
+    }
+
+    tranz.onclick = () => {
+        location.assign('/pages/transactions/')
     }
 }
 header()

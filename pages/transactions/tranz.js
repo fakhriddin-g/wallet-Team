@@ -107,7 +107,7 @@ console.log(userData);
 
 
 function header() {
-    let pHeaderWords = ['Главная', 'Мои кошельки', 'Мои транзакции']
+    let pHeaderWords = ['Главная', 'Мои кошельки']
     let leftHeader = document.createElement('div')
     let rightHeader = document.createElement('div')
     let pRightHeader = document.createElement('p')
@@ -135,6 +135,12 @@ function header() {
             location.assign("/pages/about/")
         }
     }
+
+
+    pWords.onclick = () => {
+        location.assign('/pages/wallet/')
+    }
+
 }
 header()
 

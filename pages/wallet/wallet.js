@@ -78,7 +78,7 @@ let userData = JSON.parse(localStorage.getItem("user"))
 let headerTwo = document.querySelector('.header-2')
 
 function header() {
-    let pHeaderWords = ['Главная', 'Мои кошельки', 'Мои транзакции']
+    let pHeaderWords = ['Главная', 'Мои транзакции']
     let leftHeader = document.createElement('div')
     let rightHeader = document.createElement('div')
     let pRightHeader = document.createElement('p')
@@ -105,6 +105,10 @@ function header() {
         if(con == true) {
             location.assign("/pages/about/")
         }
+    }
+
+    pWords.onclick = () => {
+        location.assign('/pages/transactions/')
     }
 }
 header()
