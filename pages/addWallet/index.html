@@ -7,6 +7,7 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+   <script src="/modules/guard.js"></script>
    <title>Вход в аккаунт</title>
    <style>
       * {
@@ -125,8 +126,9 @@
    <div class="wrapper">
       <h3>Добавить кошелек</h3>
       <form name="addWallet" class="loginForm">
-         <input type="text" placeholder="Имя" id="walletName" name="walletName">
-         <input type="text" placeholder="Валюта" id="Currency" name="Currency">
+         <input type="text" placeholder="Имя" id="walletName" name="name">
+         <input type="number" placeholder="Balance" id="balance" name="balance">
+         <input type="text" placeholder="Валюта" id="Currency" name="currency">
          <button>Добавить</button>
       </form>
       <div class="info">

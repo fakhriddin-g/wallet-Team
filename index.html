@@ -5,13 +5,10 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="/sass/style.scss">
-   <script>
-      let user = JSON.parse(localStorage.getItem('user'));
-      if (user === null) location.assign('pages/signin/');
-   </script>
+   <script src="/modules/guard.js"></script>
+   <title>Document</title>
 </head>
 
 <body>
@@ -47,7 +44,7 @@
                   </tbody>
                   <tfoot></tfoot>
                </table>
-               <a href="http://localhost:5173/pages/transacshen/" class="transaction__link">Смотреть все оплаты</a>
+               <a href="http://localhost:5173/pages/transaction/" class="transaction__link">Смотреть все оплаты</a>
             </div>
          </div>
       </main>
@@ -55,10 +52,10 @@
    <div class="modal">
       <div class="modal__dialog">
          <div class="modal__content">
-               <div data-close class="modal__close">&times;</div>
-               <div class="modal__title">Вы хотите <br> выйте с аккаунта</div>
-               <button class="btn btn_dark btn_min" data-true>ДА</button>
-               <button class="btn btn_dark btn_min" data-false>Нет</button>
+            <div data-close class="modal__close">&times;</div>
+            <div class="modal__title">Вы хотите <br> выйте с аккаунта</div>
+            <button class="btn btn_dark btn_min" data-true>ДА</button>
+            <button class="btn btn_dark btn_min" data-false>Нет</button>
          </div>
       </div>
    </div>

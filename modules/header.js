@@ -6,8 +6,8 @@ let textsMap = {
 }
 let linksMap = {
    0: '/',
-   1: 'http://localhost:5173/pages/cards/',
-   2: 'http://localhost:5173/pages/transacshen/'
+   1: '/pages/cards/',
+   2: '/pages/transaction/'
 }
 export function reloadHeader() {
    let doc = document;
@@ -65,11 +65,9 @@ export function reloadHeader() {
    })
    btn_true.onclick = () => {
       localStorage.clear();
-      location.assign('http://localhost:5173/pages/signin/');
+      location.assign('/pages/signin/');
    }
    btn_false.onclick = () => {
       modal.classList.remove('show', 'fade')
    }
 }
-
-reloadHeader();
