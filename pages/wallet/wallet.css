@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+button:active {
+    scale: .9;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #F0F0F0;
+    height: 80px;
+    display: flex;
+}
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.left-header {
+    display: flex;
+    gap: 21px;
+}
+
+.left-header p {
+    cursor: pointer;
+    transition: .3s;
+    color: gray;
+}
+
+.left-header p:hover {
+    color: black;
+}
+
+.right-header {
+    display: flex;
+    gap: 19px;
+}
+
+.right-header img {
+    cursor: pointer;
+}
+
+.header-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1600px;
+    height: 80px;
+}
+
+.gmail-a {
+    font-weight: 600;
+    color: #0047FF;
+}
+
+.container h1 {
+    margin-top: 44px;
+    margin-bottom: 11px;
+    font-weight: 700;
+    font-size: 48px;
+}
+
+.card-block {
+    margin-top: 60px;
+    display: flex;
+    gap: 30px;
+    animation: scroll 5s linear infinite;
+    margin-bottom: 21px;
+    width: 1400px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 282px;
+    height: 160px;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: -10px 0px 10px 10px rgb(207, 205, 205);
+}
+
+.card h3 {
+    color: white;
+    position: absolute;
+    top: 14px;
+    left: 20px;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.wall {
+    margin-top: 60px;
+}
+
+.card p {
+    color: white;
+    position: absolute;
+    top: 126px;
+    left: 20px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.btn-add {
+    cursor: pointer;
+    margin-top: 30px;
+    padding: 10px 30px;
+    background-color: #0047FF;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    margin-bottom: 30px;
+    transition: .3s;
+    width: 438px;
+    height: 56px;
+}
+
+.btn-add:hover {
+    background-color: white;
+    box-shadow: 0 0 10px 10px #0047FF;
+    color: #0047FF;
+    font-weight: 600;
+}

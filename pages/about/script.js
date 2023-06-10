@@ -55,13 +55,13 @@ form.onsubmit = (e) => {
             })
         
         
-            location.assign("/")
+            location.assign("/pages/catalog/")
         
             form.reset()
         
         
             console.log(user);
         
-    }
+    } 
 
 }
