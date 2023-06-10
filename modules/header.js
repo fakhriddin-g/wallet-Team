@@ -1,15 +1,15 @@
 export function header() {
     let body = document.body
-    let localedData = JSON.parse(localStorage.getItem("valid"))
+    let localedData = JSON.parse(localStorage.getItem("user"))
 
     let header = document.createElement("header")
     let nav = document.createElement("nav")
     let links = document.createElement("div")
     let hide = document.createElement("button")
     let obj = {
-        'Главная': "pages/catalog.html",
-        'Мои кошельки': "./wallets.html",
-        'Мои транзакции': "./transactions.html"
+        'Главная': "/",
+        'Мои кошельки': "/pages/addWallet/",
+        'Мои транзакции': "/pages/addTransactions/"
     }
     for (let title of ['Главная', 'Мои кошельки', 'Мои транзакции']) {
         let a = document.createElement("a")

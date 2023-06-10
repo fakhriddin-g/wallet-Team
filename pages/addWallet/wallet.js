@@ -1,6 +1,6 @@
 import { getData } from "../../modules/http.requests.js"
 import { validate } from "../../modules/regex.js"
-let about = document.forms.about
+let about = document.forms.addWallet
 let inp = about.querySelector('input')
 let inputs = about.querySelectorAll('input')
 let pass = about.querySelector('#pass')
@@ -12,19 +12,14 @@ let localedData = JSON.parse(localStorage.getItem("user"))
 let loader = '<div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>'
 
 
-inputs.forEach(inp => {
-    let patterns = {
-        email: /^[a-zA-Z0-9._ %+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-        pass: /^(?=.*[a-z])(?=.*\d)[A-Za-z\d@$!%*?&]{4,}$/,
-    }
-
-    inp.onkeyup = () => validate(patterns[inp.name], inp)
-
-})
+let patterns = {
+    name: /^[a-zA-Z0-9._ %+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+    valuta: /^(?=.*[a-z])(?=.*\d)[A-Za-z\d@$!%*?&]{4,}$/,
+}
 
 inp.value = localedData.email
 
-// pass.onkeyup = () => validate(patterns[inp.name], inp)
+pass.onkeyup = () => validate(patterns[inp.name], inp)
 
 
 
@@ -62,8 +57,6 @@ about.onsubmit = (e) => {
                 }
                 else {
                     if (res?.data[0]?.pass === user?.pass) {
-                        localStorage.setItem("user", JSON.stringify(res?.data[0]))
-
                         location.assign("/pages/catalog/")
                         about.reset()
                         console.log(user);

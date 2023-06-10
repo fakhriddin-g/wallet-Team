@@ -1,6 +1,6 @@
 import { header } from "../../modules/header.js";
 
-let localedData = JSON.parse(localStorage.getItem("valid"))
+let localedData = JSON.parse(localStorage.getItem("user"))
 let name = document.querySelector("#name")
 let email = document.querySelector("#email")
 let myWallets = document.querySelector(".myWallets")

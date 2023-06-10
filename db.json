@@ -1,5 +1,20 @@
 {
-  "users": [],
+  "users": [
+    {
+      "name": "Андрей",
+      "surname": "Кузнецов",
+      "email": "refabatya@gmail.com",
+      "pass": "3214rt",
+      "id": 1
+    },
+    {
+      "name": "So",
+      "surname": "top",
+      "email": "elvira.axmedova@merospharm.uz",
+      "pass": "3214rt",
+      "id": 2
+    }
+  ],
   "cards": [],
   "transactions": []
 }

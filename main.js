@@ -1,4 +1,4 @@
-import { postData } from "./modules/http.request.js";
+import { getData, postData } from "./modules/http.requests.js";
 import { validate } from "./modules/regex.js";
 let reg = document.forms.reg
 let inputs = reg.querySelectorAll('input')
@@ -44,25 +44,53 @@ reg.onsubmit = (e) => {
         fm.forEach((value, key) => {
             user[key] = value
         })
+
         btn.innerHTML = loader
-        localStorage.setItem("user", JSON.stringify(user))
-        postData("http://localhost:5050/users", user)
+        getData("/users?email=" + user.email)
             .then(res => {
-                btn.innerHTML = "Submit"
+                if (res.data.length !== 0) {
+                    btn.innerHTML = "Account is already exist"
+                    btn.style.backgroundColor = "red"
+                    // modal.style.opacity = "1"
+                    // modal.style.scale = "1"
+                    // setTimeout(() => {
+                        //     modal.style.display = "block"
+                        // }, 300);
+                    }
+                    else {
+                        postData("/users", user)
+                        .then(res => {
+                            btn.innerHTML = "Submit"
+                            btn.style.backgroundColor = "#0047FF"
+                            if (res?.status === 200 || res?.status === 201) {
+
+                                location.assign("pages/about/")
+
+                                localStorage.setItem("user", JSON.stringify(user))
+
+                                reg.reset()
+                                console.log(user);
+
+                            }
+                        })
+                }
+
             })
-        location.assign("pages/about/")
-        console.log(user);
-        reg.reset()
     }
 }
+
 show.onclick = () => {
     if (pass.type !== "text") {
+
         show.style.backgroundImage = `url("https://go.wepro.uz/_nuxt/img/monkey.ad68af6.png")`
         show.style.width = "100px"
         pass.type = "text"
+
     } else {
+
         show.style.backgroundImage = `url("https://go.wepro.uz/_nuxt/img/monkey-closed.397bfe9.png")`
         pass.type = "password"
         show.style.width = "30px"
+
     }
 }
