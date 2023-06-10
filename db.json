@@ -6,6 +6,13 @@
       "email": "timanormu@gmail.com",
       "password": "1234Shavkat",
       "id": 1
+    },
+    {
+      "firstname": "Daler",
+      "lastname": "Sharifkulov",
+      "email": "dsarifkulo021@gmail.com",
+      "password": "1234Daler",
+      "id": 2
     }
   ],
   "cards": [
@@ -16,6 +23,14 @@
       "lang": "RUB",
       "color": "linear-gradient(84.37deg, #3044E3 2.27%, #7317AE 92.26%)",
       "id": 1
+    },
+    {
+      "walletName": "mastercard",
+      "Currency": "EURO",
+      "userId": 2,
+      "lang": "RUB",
+      "color": "linear-gradient(84.37deg, #66E41D 2.27%, #5D9C61 92.26%)",
+      "id": 2
     }
   ],
   "transacshen": [

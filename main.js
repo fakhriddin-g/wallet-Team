@@ -1,4 +1,6 @@
-import { getData } from "./modules/http";
+import {
+   getData
+} from "./modules/http";
 let wrapper = document.querySelector('.card-container__wrapper');
 let body = document.querySelector('tbody');
 
