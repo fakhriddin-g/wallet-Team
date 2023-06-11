@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/modules/guard.js"></script>
+    <link rel="stylesheet" href="/style.css">
+    <title>Транзакции</title>
+  </head>
+  <body>
+
+    <header class="header"></header>
+
+    <div class="welcome">
+      <div class="container">
+        <div class="welcome-box">
+          <h1 class="welcome-title">
+            Мои транзакции
+            <span class="welcome-name"></span>
+          </h1>
+          <span class="welcome-email"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="transaction">
+      <div class="container">
+        <div class="transaction-table"></div>
+        <button class="btn add-transaction-btn">Добавить транзакцию</button>
+      </div>
+    </div>
+
+    <div class="modal-bg">
+      <div class="modal">
+        <h2>Добавить транзакцию</h2>
+        <form class="wallet-form" name="transaction">
+          <input name="wallet" placeholder="Из кашелька" type="text">
+          <input name="money" placeholder="Сумма" type="number">
+          <input name="category" placeholder="Категория" type="text">
+          <button class="btn modal-btn">Добавить</button>
+        </form>
+      </div>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

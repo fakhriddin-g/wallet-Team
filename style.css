@@ -91,12 +91,15 @@ a {
   margin: 44px 0 74px;
 }
 
-.welcom-email {
+.welcome-email {
   color: blue;
   cursor: pointer;
 }
 
 /* Wallet */
+.my-wallet {
+  margin-bottom: 24px;
+}
 .wallet-box {
   width: 282px;
   height: 160px;
@@ -106,8 +109,8 @@ a {
   flex-direction: column;
   justify-content: space-between;
   padding: 18px 23px;
-  margin-top: 24px;
   margin-bottom: 18px;
+  color: white;
 }
 
 .all-wallets {
@@ -146,4 +149,45 @@ table td {
   padding: 20px 0;
   border-bottom: 1px solid blue;
   /* box-shadow: 0px 3px rgb(0, 0, 255, .1); */
+}
+
+/* Modal */
+.modal-bg {
+  width: 100%;
+  height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  color: #000;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+.wallet-form {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wallet-form input {
+  outline: none;
+  height: 30px;
+  padding: 0 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
 }

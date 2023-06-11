@@ -2,8 +2,8 @@
   "users": [
     {
       "email": "azza.fayzieva@gmail.com",
-      "name": "Sarboz",
-      "surname": "Fakhriddin",
+      "name": "Fakhriddin",
+      "surname": "Mirakov",
       "password": "FA243546#sfff",
       "id": 1
     },
@@ -20,8 +20,74 @@
       "surname": "Fakhriddin",
       "password": "KJSHDkahkdshgk9374967$",
       "id": 3
+    },
+    {
+      "email": "gayosiddinov98@mail.ru",
+      "name": "Fakhriddin",
+      "surname": "Mirakov",
+      "password": "FaKhriddin1998#",
+      "id": 4
     }
   ],
-  "cards": [],
-  "transactions": []
+  "cards": [
+    {
+      "user_id": 1,
+      "name": "Visa",
+      "currency": "USD",
+      "money": "2365",
+      "id": 1
+    },
+    {
+      "user_id": 3,
+      "name": "Visa",
+      "currency": "EUR",
+      "money": "2658",
+      "id": 2
+    },
+    {
+      "user_id": 3,
+      "name": "MasterCard",
+      "currency": "EUR",
+      "money": "256000",
+      "id": 3
+    },
+    {
+      "user_id": 3,
+      "name": "Visa",
+      "currency": "TJS",
+      "money": "256000",
+      "id": 4
+    },
+    {
+      "user_id": 4,
+      "name": "Visa",
+      "currency": "USD",
+      "money": "256000",
+      "id": 5
+    }
+  ],
+  "transactions": [
+    {
+      "user_id": 3,
+      "wallet": "Visa",
+      "money": "25668",
+      "category": "Auto",
+      "id": 1
+    },
+    {
+      "user_id": 3,
+      "card_id": "",
+      "wallet": "",
+      "money": "",
+      "category": "",
+      "id": 2
+    },
+    {
+      "user_id": 3,
+      "wallet": "",
+      "money": "",
+      "category": "",
+      "id": 3
+    }
+  ]
 }

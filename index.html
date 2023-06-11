@@ -6,17 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/style.css" />
     <script src="/modules/guard.js"></script>
-    <title>Document</title>
+    <title>Главная</title>
   </head>
   <body>
     <header class="header"></header>
 
-    <div class="welcome"></div>
+    <div class="welcome">
+      <div class="container">
+        <div class="welcome-box">
+          <h1 class="welcome-title">
+            Добро пожаловать, 
+            <span class="welcome-name"></span>
+          </h1>
+          <span class="welcome-email"></span>
+        </div>
+      </div>
+    </div>
 
-    <div class="wallet"></div>
+    <div class="wallet">
+      <div class="container">
+        <div class="wallet-content">
+          <h2 class="my-wallet">Мои кошельки</h2>
+          <div class="all-wallets"></div>
+          <a class="show-all-wallet show" href="/pages/wallet/">Смотреть все кошельки</a>
+        </div>
+      </div>
+    </div>
 
-    <div class="transaction"></div>
+    <div class="transaction">
+      <div class="container">
+        <div class="transaction-content">
+          <h2 class="transaction-title">Последние транзакции</h2>
+          <div class="transaction-table"></div>
+          <a class="all-transaction show" href="/pages/transaction/">Смотреть все оплаты</a>
+        </div>
+      </div>
+    </div>
 
-    <script src="/main.js"></script>
+    <script type="module" src="/main.js"></script>
   </body>
 </html>
