@@ -1,7 +1,7 @@
 import {
     getData,
     postData
-} from "../../modules/http.requsets"
+} from "/modules/http"
 
 let loader = '<div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>'
 let form = document.forms.login

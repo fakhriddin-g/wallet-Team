@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script src="/modules/guard.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="module" src="./script.js"></script>
+    <h1>Мои кошельки</h1>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Gilroy';
+            font-style: normal;
+        }
+
+        a {
+            color: #0047FF;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        header {
+            position: sticky !important;
+            top: 0px !important;
+            left: 0px;
+            width: 100%;
+            max-width: 1920px;
+            margin: 0 auto;
+            height: 60px;
+            background-color: #F0F0F0;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            padding: 40px 0px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1920px;
+            margin: 0 auto;
+            padding: 2% 10%;
+        }
+
+        header .left,
+        header .right {
+            display: flex;
+            padding: 0% 10%;
+            font-size: 20px;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .header .right img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .container h1 {
+            font-size: 48px;
+            font-weight: 700;
+        }
+
+        .container h2 {
+            font-size: 40px;
+            font-weight: 500;
+        }
+
+        .carts {
+            width: 100%;
+            max-width: 1920px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 30px 0px;
+        }
+
+        .cart {
+            width: 380px;
+            color: white;
+            padding: 15px 30px;
+            height: 200px;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .cart h2 {
+            font-size: 26px;
+        }
+
+        .a {
+            display: flex;
+            margin-top: 1%;
+            font-size: 23px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        thead th {
+            color: gray;
+        }
+
+        th {
+            text-align: start;
+            font-size: 20px;
+        }
+
+        tbody tr {
+            margin-top: 20px;
+        }
+
+        .padding {
+            padding: 40px 0px 0px 0px;
+        }
+
+        .exit {
+            width: 40%;
+            height: 200px;
+            text-align: center;
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            background: linear-gradient(84.37deg, #20BF55 2.27%, #01BAEF 92.26%);
+            align-items: center;
+            color: white;
+            border-radius: 15px;
+            display: none;
+        }
+
+        .exit h1 {
+            font-size: 45px;
+        }
+
+        .vibor {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .exit button {
+            all: unset;
+            width: 175px;
+            height: 45px;
+            text-align: center;
+            color: white;
+            background-color: black;
+            border-radius: 15px;
+        }
+    </style>
+</body>
+
+</html>
