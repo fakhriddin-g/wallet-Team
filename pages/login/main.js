@@ -26,7 +26,7 @@ form.onsubmit = (e) => {
   getData('/users?email=' + data.email)
     .then(res => {
       if (res?.data?.length === 0) {
-        alert('Urer not found')
+        alert('User not found')
       } else {
         if (res?.data[0]?.password === data.password) {
           localStorage.setItem('user', JSON.stringify(res?.data[0]))
@@ -36,12 +36,6 @@ form.onsubmit = (e) => {
         }
       }
     })
-  // if (logPassword.value === localData.password && logEmail.value === localData.email) {
-  //   location.assign('/')
-  // } else {
-  //   alert('error')
-  // }
-
 }
 
 signBtn.onclick = () => {

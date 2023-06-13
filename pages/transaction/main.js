@@ -5,23 +5,20 @@ import { user } from "../../modules/user";
 
 let welcomeEmail = document.querySelector('.welcome-email')
 let transactionTable = document.querySelector('.transaction-table')
-let addWalletBtn = document.querySelector('.add-transaction-btn')
+let addTransactionBtn = document.querySelector('.add-transaction-btn')
+// Modal
 let modalBg = document.querySelector('.modal-bg')
-let modalBtn = document.querySelector('.modal-btn')
+let inputs = document.querySelectorAll('.modal input')
+// Close Btn for Modal
+let closeBtn = document.querySelector('.close')
+let minimizeBtn = document.querySelector('.minimize')
 let form = document.forms.transaction
 
 reloadHeader()
 
-// Get Local Storage
-// let localData = JSON.parse(localStorage.getItem('user'))
-
-
 // Welcombox Function
 welcomeEmail.innerHTML = user?.email
 
-// Wallet Function
-
-  
 // Transaction Function
 getData('/transactions?user_id=' + user.id)
   .then(res => {
@@ -30,32 +27,63 @@ getData('/transactions?user_id=' + user.id)
     }
   })
 
-addWalletBtn.onclick = () => {
+addTransactionBtn.onclick = () => {
   modalBg.style.display = 'flex'
+  setTimeout(() => {
+    modalBg.style.scale = '1'
+  }, 4);
 }
+
 
 form.onsubmit = (e) => {
   e.preventDefault()
-
+  
   let transactionData = {
     user_id: user.id
   }
-
+  
   let fm = new FormData(form)
-
+  
   fm.forEach((value, key) => {
     transactionData[key] = value
   })
-
-  // getData('/cards?user_id=' + user.id)
-  // .then(res => {
-  //   let cards_id = res.data.forEach(id => {
-  //     transactionData.card_id = id.id
-  //   })
-  // })
   
+  let newDate = (new Date().getMonth() + 1) + '/' + new Date().getDate() + '/' + new Date().getFullYear()
+  transactionData.date = newDate
+ 
   console.log(transactionData);
   
-  postData('/transactions', transactionData)
-  modalBg.style.display = 'none'
+  // postData('/transactions', transactionData)
+  // modalBg.style.display = 'none'
+}
+
+getData('/cards?user_id=' + user.id)
+  .then(res => {
+    if (res.status === 200 || res.status === 201) {
+      select(res.data)
+    }
+  })
+
+function select(arr) {
+  let selectBox = document.querySelector('.select')
+  for (const option of arr) {
+    let selectItem = document.createElement('option')
+    selectItem.innerHTML = option.name
+    selectBox.append(selectItem)
+  }
+}
+
+closeBtn.onclick = () => {
+  modalBg.style.scale = '0'
+  setTimeout(() => {
+    modalBg.style.display = 'none'
+  }, 200);
+}
+
+minimizeBtn.onclick = () => {
+  if (modalBg.classList.contains('minimize-bg')) {
+    modalBg.classList.remove('minimize-bg')
+  } else {
+    modalBg.classList.add('minimize-bg')
+  }
 }

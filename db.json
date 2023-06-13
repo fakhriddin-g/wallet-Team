@@ -64,6 +64,20 @@
       "currency": "USD",
       "money": "256000",
       "id": 5
+    },
+    {
+      "user_id": 1,
+      "name": "MasterCard",
+      "currency": "RUB",
+      "money": "256",
+      "id": 6
+    },
+    {
+      "user_id": 1,
+      "name": "UZCard",
+      "currency": "UZS",
+      "money": "200000",
+      "id": 7
     }
   ],
   "transactions": [
@@ -88,6 +102,45 @@
       "money": "",
       "category": "",
       "id": 3
+    },
+    {
+      "user_id": 1,
+      "wallet": "Visa",
+      "money": "258",
+      "category": "Auto",
+      "id": 4
+    },
+    {
+      "user_id": 1,
+      "wallet": "Visa",
+      "money": "258",
+      "category": "Auto",
+      "date": "6/12/2023",
+      "id": 5
+    },
+    {
+      "user_id": 1,
+      "wallet": "Visa",
+      "money": "258",
+      "category": "",
+      "date": "6/12/2023",
+      "id": 6
+    },
+    {
+      "user_id": 1,
+      "wallet": "Visa",
+      "money": "",
+      "category": "Auto",
+      "date": "6/12/2023",
+      "id": 7
+    },
+    {
+      "user_id": 1,
+      "wallet": "Visa",
+      "money": "258",
+      "category": "",
+      "date": "6/12/2023",
+      "id": 8
     }
   ]
 }

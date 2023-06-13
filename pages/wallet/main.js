@@ -8,6 +8,9 @@ let allWallet = document.querySelector('.all-wallets')
 let addWalletBtn = document.querySelector('.add-wallet-btn')
 let modalBg = document.querySelector('.modal-bg')
 let modalBtn = document.querySelector('.modal-btn')
+// Close Btn for Modal
+let closeBtn = document.querySelector('.close')
+let minimizeBtn = document.querySelector('.minimize')
 let form = document.forms.wallet
 
 reloadHeader()
@@ -31,6 +34,9 @@ getData('/cards?user_id=' + user?.id)
 
 addWalletBtn.onclick = () => {
   modalBg.style.display = 'flex'
+  setTimeout(() => {
+    modalBg.style.scale = '1'
+  }, 4);
 }
 
 form.onsubmit = (e) => {
@@ -48,4 +54,19 @@ form.onsubmit = (e) => {
 
   postData('/cards', walletData)
   modalBg.style.display = 'none'
+}
+
+closeBtn.onclick = () => {
+  modalBg.style.scale = '0'
+  setTimeout(() => {
+    modalBg.style.display = 'none'
+  }, 200);
+}
+
+minimizeBtn.onclick = () => {
+  if (modalBg.classList.contains('minimize-bg')) {
+    modalBg.classList.remove('minimize-bg')
+  } else {
+    modalBg.classList.add('minimize-bg')
+  }
 }

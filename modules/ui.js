@@ -57,7 +57,7 @@ export function reloadTransaction(arr, place) {
     wallet.innerHTML = body.wallet
     category.innerHTML = body.category
     transaction.innerHTML = body.money
-    time.innerHTML = body.time
+    time.innerHTML = body.date
 
     tableBodyRow.append(id, wallet, category, transaction, time)
     tableBody.append(tableBodyRow)

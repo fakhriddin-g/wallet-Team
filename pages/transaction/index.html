@@ -35,13 +35,18 @@
       <div class="modal">
         <h2>Добавить транзакцию</h2>
         <form class="wallet-form" name="transaction">
-          <input name="wallet" placeholder="Из кашелька" type="text">
+          <select class="select" name="wallet"></select>
           <input name="money" placeholder="Сумма" type="number">
           <input name="category" placeholder="Категория" type="text">
           <button class="btn modal-btn">Добавить</button>
         </form>
       </div>
+      <div class="close-box">
+        <span class="close"></span>
+        <span class="minimize"></span>
+      </div>
     </div>
+
 
     <script type="module" src="./main.js"></script>
   </body>
