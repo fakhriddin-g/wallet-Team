@@ -1,145 +1,91 @@
-let card = [
-    {
-        id: 1,
-        cardId: 1232312,
-        color: '84.37deg, #D7816A 2.27%, #BD4F6C 92.26%',
-        type: 'VISA',
-        sum: 'RUB',
-        categ: 'Автомобиль',
-        money: '414,000,000',
-        time: '4 дня назад'
-    },
-    {
-        id: 2,
-        cardId: 1232312,
-        color: '84.37deg, #5F0A87 2.27%, #A4508B 92.26%',
-        type: 'VISA',
-        sum: 'SUM',
-        categ: 'Автомобиль',
-        money: '414,000,000',
-        time: '4 дня назад'
-        
-    },
-    {
-        id: 3,
-        cardId: 1232312,
-        color: '84.37deg, #20BF55 2.27%, #01BAEF 92.26%',
-        type: 'VISA',
-        sum: 'DOLLAR',
-        categ: 'Автомобиль',
-        money: '414,000,000',
-        time: '4 дня назад'
-    },
-    {
-        id: 4,
-        cardId: 1232312,
-        color: '84.37deg, #380036 2.27%, #0CBABA 92.26%',
-        type: 'VISA',
-        sum: 'MONETA',
-        categ: 'Автомобиль',
-        money: '414,000,000',
-        time: '4 дня назад'
+let baseUrl = "http://localhost:5050"
+let form = document.forms.form
+
+
+const getUser = () => {
+    fetch(baseUrl + "/users")
+        .then(res => res.json())
+}
+
+getUser()
+
+let inps = document.querySelectorAll('input')
+
+inps.forEach((inp) => {
+    inp.onkeyup = () => {
+        let key = inp.name
+        patterns[key]
+        validate(patterns[key], inp)
     }
-]
+})
 
-let headerTwo = document.querySelector('.header-2')
-let tBody = document.querySelector('.tBody')
-let userData = JSON.parse(localStorage.getItem("user"))
+let patterns = {
+    name: /^[a-z ,.'-]+$/i,
+    surname: /^[a-z ,.'-]+$/i,
+    email: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+    password: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*(\W|_)).{5,}$/
+}
 
-console.log(userData);
-
-
-function header() {
-    let pHeaderWords = ['Главная', 'Мои кошельки']
-    let leftHeader = document.createElement('div')
-    let rightHeader = document.createElement('div')
-    let pRightHeader = document.createElement('p')
-    let imgRightHeader = document.createElement('img')
-    let pWords
-    let tranz = document.createElement('p')
-    tranz.innerHTML = 'Мои транзакции'
-    for (let index = 1; index <= pHeaderWords.length; index++) {
-        pWords = document.createElement('p')
-        pWords.innerHTML = pHeaderWords[index - 1]
-        leftHeader.append(pWords, tranz)
+function validate(regex, field) {
+    if (regex.test(field.value) || field.value.length > 3) {
+        field.classList.remove('error')
+    } else {
+        field.classList.add('error')
     }
-    pRightHeader.innerHTML = userData.email
-    imgRightHeader.src = '../icon/log-out.svg'
+}
 
-    leftHeader.classList.add('left-header')
-    rightHeader.classList.add('right-header')
+form.onsubmit = (e) => {
+    e.preventDefault();
 
-    headerTwo.append(leftHeader, rightHeader)
-    rightHeader.append(pRightHeader, imgRightHeader)
+    let isFormValid = true;
 
-
-    imgRightHeader.onclick = () => {
-        let con = confirm('sure?')
-
-        if(con == true) {
-            location.assign("/pages/about/")
+    inps.forEach(inp => {
+        if (inp.value.length < 3) {
+            inp.classList.add('error');
+            isFormValid = false;
+        } else {
+            inp.classList.remove('error');
         }
-    }
+    });
 
+    if (isFormValid) {
+        let userInfo = {
+            id: Math.random()
+        }
 
-    pWords.onclick = () => {
-        location.assign('/pages/wallet/')
-    }
+        let formData = new FormData(form);
 
-    tranz.onclick = () => {
-        location.assign('/pages/transactions/')
-    }
-}
-header()
+        for (let [key, value] of formData.entries()) {
+            userInfo[key] = value;
+        }
 
-let cardBlock = document.querySelector('.card-block')
-function reload(arr) {
+        localStorage.setItem("user", JSON.stringify(userInfo))
 
+        location.assign("pages/about/")
 
-    for (let item of arr) {
-        let card = document.createElement('div')
-        let h3Card = document.createElement('h3')
-        let pCard = document.createElement('p')
-        let tr = document.createElement('tr')
-        let idTd = document.createElement('td')
-        let visaTd = document.createElement('td')
-        let categTd = document.createElement('td')
-        let sumTd = document.createElement('td')
-        let whenTd = document.createElement('td')
+        let json = JSON.stringify(userInfo);
 
-        h3Card.innerHTML = item.type
-        pCard.innerHTML = item.sum
-        idTd.innerHTML = item.cardId
-        visaTd.innerHTML = item.type
-        categTd.innerHTML = item.categ
-        sumTd.innerHTML = item.money
-        whenTd.innerHTML = item.time
+        creatUser(json);
 
-        card.style.background = "linear-gradient(" + item.color + ')'
-        card.classList.add('card')
+        form.reset();
 
-        cardBlock.append(card)
-        card.append(h3Card, pCard)
-        tBody.append(tr)
-        tr.append(idTd, visaTd, categTd, sumTd, whenTd)
+        location.assign("/pages/about/")
     }
 }
 
-reload(card)
-
-let nameSpan = document.querySelector('#name')
-let gmailText = document.querySelector('.gmail-a')
-let allWall = document.querySelector('.all-wall')
-let allTranz = document.querySelector('.all-tranz')
-
-nameSpan.innerHTML = `${userData.name} ${userData.surname}`
-gmailText.innerHTML = userData.email
 
 
-allWall.onclick = () => {
-    location.assign('/pages/wallet/')
-}
 
-allTranz.onclick = () => {
-    location.assign('/pages/transactions/')
+
+const creatUser = async (body) => {
+    const res = await fetch(baseUrl + "/users", {
+        method: "post",
+        body: body,
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    if (res.status === 201 || res.status === 200) {
+        getUser()
+    }
 }

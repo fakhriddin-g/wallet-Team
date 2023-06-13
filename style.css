@@ -1,89 +1,156 @@
+
+
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
-}
-
-body {
-  overflow-x: hidden;
-}
-
-a {
-  text-decoration: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
 
 button:active {
-  scale: .9;
+    scale: .9;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #F0F0F0;
+    height: 80px;
+    display: flex;
 }
 
 .container {
-  width: 1600px;
-  margin: 150px auto;
+    max-width: 1600px;
+    margin: 0 auto;
 }
 
-.reg-h1 {
-  text-align: center;
+.left-header {
+    display: flex;
+    gap: 21px;
 }
 
-.input-block {
-  display: flex;
-  gap: 100px;
-  justify-content: center;
-  margin-top: 35px;
+.left-header p {
+    cursor: pointer;
+    transition: .3s;
+    color: gray;
 }
 
-.input {
-  outline: none;
+.left-header p:hover {
+    color: black;
 }
 
-.btn-center {
-  text-align: center;
+.right-header {
+    display: flex;
+    gap: 19px;
 }
 
-.name-p {
-  margin-top: 10px;
-  margin-bottom: 5px;
+.right-header img {
+    cursor: pointer;
 }
 
-.input {
-  background: transparent;
-  border: 1px solid #543FD3;
-  border-radius: 5px;
-  padding: 15px 20px;
+.header-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1600px;
+    height: 80px;
 }
 
-.continue {
-   cursor: pointer;
-   margin-top: 30px;
-   padding: 10px 30px;
-   background-color: #0047FF;
-   border-radius: 10px;
-   border: none;
-   color: white;
-   margin-bottom: 30px;
-   transition: .3s;
+.gmail-a {
+    font-weight: 600;
+    color: #0047FF;
 }
 
-.continue:hover {
-  background-color: white;
-  box-shadow: 0 0 10px 10px #0047FF;
-  color: #0047FF;
-  font-weight: 600;
+.card-block {
+    margin-top: 20px;
+    display: flex;
+    gap: 30px;
+    animation: scroll 5s linear infinite;
+    margin-bottom: 21px;
+    width: 2400px;
 }
 
-.btn-center a {
-  font-weight: 600;
-  color: #0047FF;
-  transition: .3s;
+.card {
+    width: 282px;
+    height: 160px;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: -10px 0px 10px 10px rgb(207, 205, 205);
 }
 
-.btn-center a:hover {
-  text-decoration: underline;
+.card h3 {
+    color: white;
+    position: absolute;
+    top: 14px;
+    left: 20px;
+    font-weight: 500;
+    font-size: 24px;
 }
 
-.error {
-  border: 1px solid red;
+.wall {
+    margin-top: 60px;
 }
+
+.card p {
+    color: white;
+    position: absolute;
+    top: 126px;
+    left: 20px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.all-wall {
+    font-weight: 600;
+}
+
+.h1-welcome {
+    margin-top: 44px;
+}
+
+table {
+    width: 100%;
+    margin-top: 50px;
+    border-collapse: separate;
+    border-spacing: 0px 0px;
+    margin-bottom: 30px;
+}
+
+table th {
+    text-align: start;
+    padding: 0 0 10px 0;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+table td {
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    font-weight: 600;
+}
+
+
+@keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+        transform: translateX(400px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+  }
+
+  .tranz-block h2 {
+    margin-top: 40px;
+  }

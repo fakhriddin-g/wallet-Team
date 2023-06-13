@@ -1,93 +1,35 @@
-let card = [
-    {
-        id: 1,
-        cardId: 1232312,
-        color: '84.37deg, #D7816A 2.27%, #BD4F6C 92.26%',
-        type: 'VISA',
-        sum: 'RUB',
-        categ: 'Автомобиль',
-        money: '414,000,000',
-        time: '4 дня назад'
-    },
-    {
-        id: 2,
-        cardId: 1232312,
-        color: '84.37deg, #5F0A87 2.27%, #A4508B 92.26%',
-        type: 'VISA',
-        sum: 'SUM',
-        categ: 'Автомобиль',
-        money: '414,000,000',
-        time: '4 дня назад'
-        
-    },
-    {
-        id: 3,
-        cardId: 1232312,
-        color: '84.37deg, #20BF55 2.27%, #01BAEF 92.26%',
-        type: 'VISA',
-        sum: 'DOLLAR',
-        categ: 'Автомобиль',
-        money: '414,000,000',
-        time: '4 дня назад'
-    },
-    {
-        id: 4,
-        cardId: 1232312,
-        color: '84.37deg, #380036 2.27%, #0CBABA 92.26%',
-        type: 'VISA',
-        sum: 'MONETA',
-        categ: 'Автомобиль',
-        money: '414,000,000',
-        time: '4 дня назад'
-    },
-    {
-        id: 5,
-        cardId: 1232312,
-        color: '84.37deg, #5F0A87 2.27%, #A4508B 92.26%',
-        type: 'VISA',
-        sum: 'SUM',
-        categ: 'Автомобиль',
-        money: '414,000,000',
-        time: '4 дня назад'
-        
-    },
-    {
-        id: 6,
-        cardId: 1232312,
-        color: '84.37deg, #20BF55 2.27%, #01BAEF 92.26%',
-        type: 'VISA',
-        sum: 'DOLLAR',
-        categ: 'Автомобиль',
-        money: '414,000,000',
-        time: '4 дня назад'
-    },
-    {
-        id: 7,
-        cardId: 1232312,
-        color: '84.37deg, #380036 2.27%, #0CBABA 92.26%',
-        type: 'VISA',
-        sum: 'MONETA',
-        categ: 'Автомобиль',
-        money: '414,000,000',
-        time: '4 дня назад'
-    }
-]
 
+import { getData } from '../../modules/http';
+getData("/cards")
+    .then(res => reload(res.data))
 
 let userData = JSON.parse(localStorage.getItem("user"))
 let headerTwo = document.querySelector('.header-2')
 
+function getRandomColor() {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+
+
 function header() {
-    let pHeaderWords = ['Главная', 'Мои транзакции']
+    let pHeaderWords = ['Главная']
     let leftHeader = document.createElement('div')
     let rightHeader = document.createElement('div')
     let pRightHeader = document.createElement('p')
     let imgRightHeader = document.createElement('img')
     let pWords
+    let tranzP = document.createElement('p')
+    tranzP.innerHTML = 'Мои транзакции'
     for (let index = 1; index <= pHeaderWords.length; index++) {
         pWords = document.createElement('p')
         pWords.innerHTML = pHeaderWords[index - 1]
-        leftHeader.append(pWords)
+        leftHeader.append(pWords, tranzP)
     }
     pRightHeader.innerHTML = userData.email
     imgRightHeader.src = '../icon/log-out.svg'
@@ -107,8 +49,12 @@ function header() {
         }
     }
 
-    pWords.onclick = () => {
+    tranzP.onclick = () => {
         location.assign('/pages/transactions/')
+    }
+
+    pWords.onclick = () => {
+        location.assign('/')
     }
 }
 header()
@@ -122,14 +68,22 @@ function reload(arr) {
 
 
     for (let item of arr) {
+        const cards = document.querySelectorAll('.card');
+
+        cards.forEach(card => {
+          const color1 = getRandomColor();
+          const color2 = getRandomColor();
+          card.style.background = `linear-gradient(to right, ${color1}, ${color2})`;
+        });
+        
         let card = document.createElement('div')
         let h3Card = document.createElement('h3')
         let pCard = document.createElement('p')
 
-        h3Card.innerHTML = item.type
-        pCard.innerHTML = item.sum
+        h3Card.innerHTML = item.name
+        pCard.innerHTML = item.value
 
-        card.style.background = "linear-gradient(" + item.color + ')'
+        
         card.classList.add('card')
 
         cardBlock.append(card)
@@ -137,4 +91,10 @@ function reload(arr) {
     }
 }
 
-reload(card)
+
+
+let btnAdd = document.querySelector('.btn-add')
+
+btnAdd.onclick = () => {
+    location.assign('/pages/addWallet/')
+}

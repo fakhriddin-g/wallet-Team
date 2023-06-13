@@ -15,6 +15,8 @@ export default defineConfig({
                 catalog: resolve(__dirname, 'pages/catalog/index.html'),
                 transactions: resolve(__dirname, 'pages/transactions/index.html'),
                 wallet: resolve(__dirname, 'pages/wallet/index.html'),
+                addTranz: resolve(__dirname, 'pages/addTranz/index.html'),
+                addWallet: resolve(__dirname, 'pages/addWallet/index.html'),
             },
         },
     },

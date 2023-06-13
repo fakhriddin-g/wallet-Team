@@ -1,13 +1,27 @@
 {
   "users": [
     {
-      "id": 0.3749294139027912,
+      "id": 0.16477864042198642,
       "email": "amalabdurahmonov427@gmail.com",
       "name": "amal",
       "surname": "aaaaaaaaaaaaaaa",
-      "password": "2222"
+      "password": "1234"
+    },
+    {
+      "id": 0.13257915805111664,
+      "email": "amalabdurahmonov427@gmail.com",
+      "name": "amal",
+      "surname": "aaaaaaaaaaaaaaa",
+      "password": "1234"
     }
   ],
-  "cards": [],
+  "cards": [
+    {
+      "id": "19ac57a3-db01-4b49-bab1-cc7abfb435e3",
+      "user_id": 0.13257915805111664,
+      "name": "amal",
+      "value": "Rub"
+    }
+  ],
   "transactions": []
 }

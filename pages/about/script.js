@@ -1,4 +1,5 @@
 let baseUrl = "http://localhost:5050"
+import { getData } from '../../modules/http';
 
 let inpEmail = document.querySelector('.inp-email')
 let inpPas = document.querySelector('.inp-pass')
@@ -15,6 +16,7 @@ inpEmail.value = userData.email
 
 
 let inps = document.querySelectorAll('input')
+let continueBtn = document.querySelector('.continue')
 
 
 inps.forEach((inp) => {
@@ -42,8 +44,9 @@ function validate(regex, field) {
 form.onsubmit = (e) => {
     e.preventDefault();
 
-
-    if(userData.password == inpPas.value) {
+    getData("/users")
+    .then(res => {
+        if(res.data[0].password == inpPas.value) {
             let user = {
                 id: Math.random()
             }
@@ -55,13 +58,19 @@ form.onsubmit = (e) => {
             })
         
         
-            location.assign("/pages/catalog/")
+            location.assign("/")
         
             form.reset()
         
         
-            console.log(user);
         
-    } 
+    } else {
+        continueBtn.classList.add('error-btn')
+        inps.forEach((inp) => {
+            inp.classList.add('error')
+        })
+    }
+    })
+  
 
 }

@@ -88,3 +88,24 @@ table td {
     margin-top: 44px;
     margin-bottom: 11px;
 }
+
+.btn-add {
+    cursor: pointer;
+    margin-top: 30px;
+    padding: 10px 30px;
+    background-color: #0047FF;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    margin-bottom: 30px;
+    transition: .3s;
+    width: 438px;
+    height: 56px;
+}
+
+.btn-add:hover {
+    background-color: white;
+    box-shadow: 0 0 10px 10px #0047FF;
+    color: #0047FF;
+    font-weight: 600;
+}

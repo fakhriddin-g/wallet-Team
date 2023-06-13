@@ -10,72 +10,53 @@
 <body>
     
 
-    <header>
-        <div class="container">
-    
-            <div class="header-2">
-            <!-- <div class="left-header">
-           <p>Главная</p>
-           <p>Мои кошельки</p>
-           <p>Мои транзакции</p>
-        </div>
-    
-        <div class="right-header">
-            <p>alexadams@google.com</p>
-            <img src="./icon/log-out.svg">
-        </div> -->
+   
+  <div class="container">
+    <div class="reg-h1">
+    <h1>Регистрация</h1>
+  </div>
+
+    <form name="form">
+  <div class="input-block">
+
+    <div class="first-block">
+      <label for="email">
+        <p class="name-p">Email</p>
+        <input type="email" name="email" placeholder="email" class="input">
+      </label>
+
+      <label for="name">
+        <p class="name-p">Name</p>
+    <input type="text" name="name" placeholder="name" class="input">
+      </label>
     </div>
-    
+
+    <div class="second-block">
+      <label for="surname">
+        <p class="name-p">Surname</p>
+        <input type="text" name="surname" placeholder="surname" class="input">
+      </label>
+
+      <label for="password">
+        <p class="name-p">Password</p>
+        <input type="password" name="password" placeholder="password" class="input">
+      </label>
     </div>
-    </header>
-    
-    <div class="container">
-        <h1 class="h1-welcome">Добро пожаловать, <span id="name"></span>!</h1> <br>
-        <a href="#" class="gmail-a"></a>
-    
-        
-        <h2 class="wall">Мои кошельки</h2>
-        <div class="card-block">
-    
-            <!-- <div class="card">
-                <h3>Visa</h3>
-                <p>RUB</p>
-            </div> -->
-        </div>
-    
-        <a href="#" class="all-wall">Смотреть все кошельки</a>
-    
-        <div class="tranz-block">
-            <h2>Последние транзакции</h2>
-    
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Отправлено с кошелька</th>
-                        <th>Категория</th>
-                        <th>Сумма транзации</th>
-                        <th>Когда</th>
-                    </tr>
-                </thead>
-                <tbody class="tBody">
-                    <tr>
-                         <td>12333333</td>
-                        <td>VISA</td>
-                        <td>Автомобиль</td>
-                        <td>414,000,000</td>
-                        <td>4 дня назад</td>
-                    </tr>
-                </tbody>
-            </table>
-    
-            <a href="#" class="gmail-a all-tranz">Смотреть все оплаты</a>
-        </div>
-    
+
+
     </div>
+
+    <div class="btn-center">
+    <button class="continue">Продолжить</button> <br>
+    <a href="/pages/about/">Войти в аккаунт</a>
+  </div>
+  </form>
+
+
+  </div>
 
     
 
-    <script src="./script.js"></script>
+    <script type="module" src="./script.js"></script>
 </body>
 </html>
