@@ -13,3 +13,7 @@ getData('/transaction/')
          if (body !== null) reloadTable(res.data, body);
       }
    })
+let btn = document.querySelector('.trs')
+btn.onclick = () => {
+   location.assign('/pages/addTransaction/')
+}
