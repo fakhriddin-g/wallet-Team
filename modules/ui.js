@@ -12,7 +12,7 @@ export function reload(arr, place) {
       //inner
       title.innerHTML = card.name;
       lang.innerHTML = card.currency;
-      div.style.background = "red"
+      div.style.background = getRandomColor();
       //append
       div.append(title, lang);
       place.append(div);
@@ -57,4 +57,12 @@ export function textError(info, p, text) {
          }, 300);
       }, 1600)
    }, 100)
+}
+export function getRandomColor() {
+   var letters = '0123456789ABCDEF';
+   var color = '#';
+   for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+   }
+   return color;
 }
