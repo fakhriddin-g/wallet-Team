@@ -13,7 +13,7 @@ form.onsubmit = (e) => {
    let data = {
       id: uuidv4(),
       user_id: userData?.id,
-      time:'4 дня назад'
+      time: '4 дня назад'
    }
 
    let fm = new FormData(form)
@@ -31,9 +31,10 @@ form.onsubmit = (e) => {
             if (res.data.length > 0) {
                let arr = res.data.find(item => item.name === data.wallet_name) || [];
                if (arr !== null) {
-                  if (data.price <= arr.balance){
+                  if (+data.price <= +arr.balance) {
                      data.wallet_id = arr.id;
                      postData('/transaction', data);
+                     location.assign('/pages/transaction/')
                   }
                }
             }

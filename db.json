@@ -1,61 +1,32 @@
 {
-  "users": [
-    {
-      "firstname": "Shawkat",
-      "lastname": "Normurodov",
-      "email": "timanormu@gmail.com",
-      "password": "1234Shavkat",
-      "id": 1
-    },
-    {
-      "firstname": "Daler",
-      "lastname": "Sharifkulov",
-      "email": "dsarifkulo021@gmail.com",
-      "password": "1234Daler",
-      "id": 2
-    }
-  ],
+  "users": [],
   "cards": [
     {
-      "id": "87748753-e6e1-4ebf-9ee1-6b223b0b5a29",
-      "user_id": 1,
-      "name": "Visa",
-      "balance": "12000",
-      "currency": "USD"
-    },
-    {
-      "id": "736f5c24-74bf-4411-80ea-6c647ce17878",
-      "user_id": 1,
-      "name": "Ozodgdewifi",
-      "balance": "140000",
-      "currency": "UZS"
-    },
-    {
-      "id": "559dfbb2-c44b-44e7-8368-873ed57501f2",
-      "user_id": 2,
+      "id": "0918467a-8e04-4884-a8ea-2fb463f5e803",
+      "user_id": 3,
       "name": "Humo",
-      "balance": "10000",
-      "currency": "dirhum"
+      "balance": "1000000",
+      "currency": "UZB"
     }
   ],
   "transaction": [
     {
-      "id": "3d7517a9-8da9-42b7-87f1-551f48777095",
-      "user_id": 2,
-      "wallet_name": "Ozodgdewifi",
-      "price": "123456",
+      "id": "e257bb0a-1183-480e-a707-5af39432aa58",
+      "user_id": 3,
+      "time": "4 дня назад",
+      "wallet_name": "Humo",
+      "price": "1",
       "categories": "auto",
-      "wallet_id": "736f5c24-74bf-4411-80ea-6c647ce17878",
-      "time":"4 дня назад"
+      "wallet_id": "0918467a-8e04-4884-a8ea-2fb463f5e803"
     },
     {
-      "id": "eeab6589-003a-4757-b8fc-40c2c0c983d5",
-      "user_id": 1,
-      "wallet_name": "Ozodgdewifi",
-      "price": "113456",
+      "id": "cab992a1-4f7c-4472-97d4-11ac88d672fe",
+      "user_id": 3,
+      "time": "4 дня назад",
+      "wallet_name": "Humo",
+      "price": "12356",
       "categories": "auto",
-      "wallet_id": "736f5c24-74bf-4411-80ea-6c647ce17878",
-      "time":"4 дня назад"
+      "wallet_id": "0918467a-8e04-4884-a8ea-2fb463f5e803"
     }
   ]
 }

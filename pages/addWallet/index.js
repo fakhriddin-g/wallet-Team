@@ -25,5 +25,6 @@ form.onsubmit = (e) => {
    })
    if (b) {
       postData('/cards', card)
+      location.assign('/pages/cards/')
    }
 }
