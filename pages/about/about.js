@@ -1,5 +1,6 @@
 import { getData } from "../../modules/http.requests.js"
-import { validate } from "../../modules/regex.js"
+import { validate } from "../../modules/regex.js";
+
 let about = document.forms.about
 let inp = about.querySelector('input')
 let inputs = about.querySelectorAll('input')
@@ -22,11 +23,9 @@ inputs.forEach(inp => {
 
 })
 
-inp.value = localedData.email
+inp.value = localedData?.email || null
 
 // pass.onkeyup = () => validate(patterns[inp.name], inp)
-
-
 
 about.onsubmit = (e) => {
 
@@ -64,7 +63,7 @@ about.onsubmit = (e) => {
                     if (res?.data[0]?.pass === user?.pass) {
                         localStorage.setItem("user", JSON.stringify(res?.data[0]))
 
-                        location.assign("/pages/catalog/")
+                        location.assign("/")
                         about.reset()
                         console.log(user);
                         btn.innerHTML = "Submit"
@@ -78,7 +77,7 @@ about.onsubmit = (e) => {
             })
     }
 }
-show.onclick = () => {
+show.onclick = () => {  
     if (pass.type !== "text") {
         show.style.backgroundImage = `url("https://go.wepro.uz/_nuxt/img/monkey.ad68af6.png")`
         pass.type = "text"

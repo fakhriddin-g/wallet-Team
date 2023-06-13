@@ -1,96 +1,72 @@
-import { getData, postData } from "./modules/http.requests.js";
-import { validate } from "./modules/regex.js";
-let reg = document.forms.reg
-let inputs = reg.querySelectorAll('input')
-let btn = reg.querySelector('button')
-let show = reg.querySelector('.show')
-let pass = reg.querySelector('#pass')
-let loader = '<div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>'
+import { header } from "./modules/header"
+import { transactions, wallets } from "./modules/ui"
+import { reloadTransactions, reloadWallet } from "./modules/reload"
+import { getData } from "./modules/http.requests"
+import { user } from "./modules/user"
 
-let base_url = "http://localhost:5050"
+let localedData = JSON.parse(localStorage.getItem("user"))
+let name = document.querySelector("#name")
+export let modal = document.querySelector(".modal")
+export let modal_bg = document.querySelector(".modal_bg")
+let close = document.querySelectorAll(".close")
+let sign_out = document.querySelector(".modal button")
+let email = document.querySelector("#email")
+let myWallets = document.querySelector(".myWallets")
+let tbody = document.querySelector("tbody")
 
-inputs.forEach(inp => {
-    let patterns = {
-        name: /^[a-z а-я ,.'-]+$/i,
-        surname: /^[a-z а-я ,.'-]+$/i,
-        email: /^[a-zA-Z0-9._ %+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-        pass: /^(?=.*[a-z])(?=.*\d)[A-Za-z\d@$!%*?&]{4,}$/,
+sign_out.onclick = () => {
+    location.assign("/pages/about/")
+    localStorage.removeItem("user")
+}
+
+close.forEach(btn => {
+    btn.onclick = () => {
+        modal.style.opacity = "0"
+        modal_bg.style.opacity = "0"
+        modal.style.scale = "0"
+        setTimeout(() => {
+            modal.style.display = "none"
+            modal_bg.style.display = "none"
+        }, 300);
     }
-
-    inp.onkeyup = () => validate(patterns[inp.name], inp)
-
 })
+let allWallets = document.querySelector("#allWallets")
+let allPay = document.querySelector("#allPay")
 
-reg.onsubmit = (e) => {
+header()
 
-    e.preventDefault()
-
-    let filled = true
-
-    inputs.forEach(inp => {
-        // inp.classList.remove("error")
-
-        if (inp.value.length === 0 || inp.classList.contains("error")) {
-            filled = false
-            btn.style.backgroundColor = "red"
-            inp.classList.add("error")
+getData("/cards/" + localedData.id)
+    .then(res => {
+        if (res.status === 200 || res.status === 201) {
+            reloadWallet(res.data.slice(0, 4), myWallets)
         }
     })
 
-    if (filled) {
-        let user = {}
-        let fm = new FormData(reg)
+getData("/transaction/" + localedData.id)
+    .then(res => {
+        if (res.status === 200 || res.status === 201) {
+            reloadTransactions(res.data.slice(0, 7), tbody)
+        }
+    })
 
-        fm.forEach((value, key) => {
-            user[key] = value
-        })
 
-        btn.innerHTML = loader
-        getData("/users?email=" + user.email)
-            .then(res => {
-                if (res.data.length !== 0) {
-                    btn.innerHTML = "Account is already exist"
-                    btn.style.backgroundColor = "red"
-                    // modal.style.opacity = "1"
-                    // modal.style.scale = "1"
-                    // setTimeout(() => {
-                        //     modal.style.display = "block"
-                        // }, 300);
-                    }
-                    else {
-                        postData("/users", user)
-                        .then(res => {
-                            btn.innerHTML = "Submit"
-                            btn.style.backgroundColor = "#0047FF"
-                            if (res?.status === 200 || res?.status === 201) {
+if (allWallets !== null) {
 
-                                location.assign("pages/about/")
-
-                                localStorage.setItem("user", JSON.stringify(user))
-
-                                reg.reset()
-                                console.log(user);
-
-                            }
-                        })
-                }
-
-            })
+    allWallets.onclick = () => {
+        location.assign("/pages/myWallet/")
     }
 }
 
-show.onclick = () => {
-    if (pass.type !== "text") {
+if (allWallets !== null) {
 
-        show.style.backgroundImage = `url("https://go.wepro.uz/_nuxt/img/monkey.ad68af6.png")`
-        show.style.width = "100px"
-        pass.type = "text"
-
-    } else {
-
-        show.style.backgroundImage = `url("https://go.wepro.uz/_nuxt/img/monkey-closed.397bfe9.png")`
-        pass.type = "password"
-        show.style.width = "30px"
-
+    allPay.onclick = () => {
+        location.assign("/pages/myTransaction/")
     }
 }
+
+
+// name.innerHTML = user.name
+// email.innerHTML = user.email
+
+
+

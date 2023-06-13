@@ -1,5 +1,5 @@
 let localedUser = JSON.parse(localStorage.getItem("user"))
 
 if (!localedUser) {
-    location.assign("/pages/about")
+    location.assign("/pages/about/")
 }
