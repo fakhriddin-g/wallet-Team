@@ -40,13 +40,22 @@
   ],
   "transaction": [
     {
-      "fromWallet": "123",
+      "id": "3d7517a9-8da9-42b7-87f1-551f48777095",
+      "user_id": 2,
+      "wallet_name": "Ozodgdewifi",
       "price": "123456",
       "categories": "auto",
-      "userId": 1,
-      "time": "4 дня назад",
-      "welletId": 1,
-      "id": 1
+      "wallet_id": "736f5c24-74bf-4411-80ea-6c647ce17878",
+      "time":"4 дня назад"
+    },
+    {
+      "id": "eeab6589-003a-4757-b8fc-40c2c0c983d5",
+      "user_id": 1,
+      "wallet_name": "Ozodgdewifi",
+      "price": "113456",
+      "categories": "auto",
+      "wallet_id": "736f5c24-74bf-4411-80ea-6c647ce17878",
+      "time":"4 дня назад"
     }
   ]
 }

@@ -114,22 +114,21 @@ a {
 
       color: #0047ff;
    }
-   &__button {
-      width: 100%;
-      max-width: 438px;
-      height: 56px;
-      background: #0047ff;
-      border-radius: 10px;
-      font-weight: 600;
-      font-size: 18px;
-      line-height: 22px;
-      color: #ffffff;
-      border: 0;
-      cursor: pointer;
-      align-items: center;
-   }
 }
-
+.btn__add{
+   width: 100%;
+   max-width: 438px;
+   height: 56px;
+   background: #0047ff;
+   border-radius: 10px;
+   font-weight: 600;
+   font-size: 18px;
+   line-height: 22px;
+   color: #ffffff;
+   border: 0;
+   cursor: pointer;
+   align-items: center;
+}
 .item {
    width: 282px;
    height: 160px;

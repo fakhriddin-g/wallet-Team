@@ -12,7 +12,7 @@ let btn = document.querySelector('.card-container__button');
 getData('/cards?user_id=' + userData.id)
    .then(res => {
       if (res.status == 200 || res.status === 201) {
-         if (wrapper !== null) reload(res.data, wrapper);
+         reload(res.data, wrapper);
       }
    })
 

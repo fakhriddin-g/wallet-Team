@@ -1,23 +1,10 @@
 import { getData, postData } from '../../modules/http';
+import { textError } from '../../modules/ui';
+
 let doc = document
 let inputs = doc.querySelectorAll('input');
 let info = doc.querySelector('.info');
 let p = info.querySelector('p');
- function textError(info, p, text) {
-   p.innerText = text;
-   info.style.display = 'flex';
-   setTimeout(() => {
-      info.style.marginBottom = '120px'
-      info.style.opacity = 1;
-      setTimeout(() => {
-         info.style.marginBottom = '0px'
-         info.style.opacity = 0;
-         setTimeout(() => {
-            info.style.display = 'none'
-         }, 300);
-      }, 1600)
-   }, 100)
-}
 let regularMap = {
    firstname: /^\p{Lu}[a-zA-z\-]+$/u,
    lastname: /^\p{Lu}[a-zA-z\-]+$/u,
@@ -58,3 +45,4 @@ form.onsubmit = (event) => {
          })
    }
 }
+

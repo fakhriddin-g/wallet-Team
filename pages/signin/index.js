@@ -1,20 +1,7 @@
 import { getData } from '../../modules/http';
+import { textError } from '../../modules/ui';
 let doc = document
-function textError(info, p, text) {
-   p.innerText = text;
-   info.style.display = 'flex';
-   setTimeout(() => {
-      info.style.marginBottom = '120px'
-      info.style.opacity = 1;
-      setTimeout(() => {
-         info.style.marginBottom = '0px'
-         info.style.opacity = 0;
-         setTimeout(() => {
-            info.style.display = 'none'
-         }, 300);
-      }, 1600)
-   }, 100)
-}
+
 let passwordInput = doc.getElementById('password');
 let emailInput = doc.getElementById('email');
 
