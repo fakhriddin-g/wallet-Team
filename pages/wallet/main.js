@@ -54,8 +54,8 @@ function save() {
     walletData[key] = value
   })
 
-  // postData('/cards', walletData)
-  // modalBg.style.display = 'none'
+  postData('/cards', walletData)
+  modalBg.style.display = 'none'
 }
 
 inputs.forEach(input => {

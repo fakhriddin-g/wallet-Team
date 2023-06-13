@@ -58,8 +58,8 @@ function save() {
  
   console.log(transactionData);
   
-  // postData('/transactions', transactionData)
-  // modalBg.style.display = 'none'
+  postData('/transactions', transactionData)
+  modalBg.style.display = 'none'
 }
 
 inputs.forEach(input => {

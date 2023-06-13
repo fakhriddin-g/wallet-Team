@@ -22,6 +22,14 @@
       "id": 3
     }
   ],
-  "cards": [],
+  "cards": [
+    {
+      "user_id": 1,
+      "name": "Visa",
+      "currency": "EUR",
+      "balance": "258",
+      "id": 1
+    }
+  ],
   "transactions": []
 }
