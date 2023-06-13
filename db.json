@@ -13,6 +13,13 @@
       "email": "dsarifkulo021@gmail.com",
       "password": "1234Daler",
       "id": 2
+    },
+    {
+      "firstname": "Iskandar",
+      "lastname": "Khasanov",
+      "email": "hasanoviskandar289@gmail.com",
+      "password": "Iskandar1234",
+      "id": 3
     }
   ],
   "cards": [
@@ -36,6 +43,13 @@
       "name": "Humo",
       "balance": "10000",
       "currency": "dirhum"
+    },
+    {
+      "id": "27fdc5b4-234d-470d-b932-47bbcfc6490e",
+      "user_id": 3,
+      "name": "asd",
+      "balance": "1000",
+      "currency": "EURO"
     }
   ],
   "transaction": [
