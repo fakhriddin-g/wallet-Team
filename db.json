@@ -1,32 +1,5 @@
 {
-  "users": [],
-  "cards": [
-    {
-      "id": "0918467a-8e04-4884-a8ea-2fb463f5e803",
-      "user_id": 3,
-      "name": "Humo",
-      "balance": "1000000",
-      "currency": "UZB"
-    }
-  ],
-  "transaction": [
-    {
-      "id": "e257bb0a-1183-480e-a707-5af39432aa58",
-      "user_id": 3,
-      "time": "4 дня назад",
-      "wallet_name": "Humo",
-      "price": "1",
-      "categories": "auto",
-      "wallet_id": "0918467a-8e04-4884-a8ea-2fb463f5e803"
-    },
-    {
-      "id": "cab992a1-4f7c-4472-97d4-11ac88d672fe",
-      "user_id": 3,
-      "time": "4 дня назад",
-      "wallet_name": "Humo",
-      "price": "12356",
-      "categories": "auto",
-      "wallet_id": "0918467a-8e04-4884-a8ea-2fb463f5e803"
-    }
-  ]
+   "users": [],
+   "cards": [],
+   "transaction": []
 }

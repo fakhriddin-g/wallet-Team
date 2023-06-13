@@ -7,10 +7,10 @@ let body = document.querySelector('tbody');
 let btn = document.querySelector('.transaction__button');
 reloadHeader()
 
-getData('/transaction/')
+getData('/transaction?user_id='+userData.id)
    .then(res => {
       if (res.status == 200 || res.status === 201) {
-         if (body !== null) reloadTable(res.data, body);
+         reloadTable(res.data, body);
       }
    })
 
