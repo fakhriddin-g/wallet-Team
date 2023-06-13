@@ -1,5 +1,6 @@
 import { reloadHeader } from "../../modules/header";
 import { getData, postData } from "../../modules/http.requests";
+import { regexPattern } from "../../modules/regex";
 import { reloadTransaction } from "../../modules/ui";
 import { user } from "../../modules/user";
 
@@ -8,6 +9,7 @@ let transactionTable = document.querySelector('.transaction-table')
 let addTransactionBtn = document.querySelector('.add-transaction-btn')
 // Modal
 let modalBg = document.querySelector('.modal-bg')
+let modalBtn = document.querySelector('.modal-btn')
 let inputs = document.querySelectorAll('.modal input')
 // Close Btn for Modal
 let closeBtn = document.querySelector('.close')
@@ -38,6 +40,9 @@ addTransactionBtn.onclick = () => {
 form.onsubmit = (e) => {
   e.preventDefault()
   
+}
+
+function save() {
   let transactionData = {
     user_id: user.id
   }
@@ -56,6 +61,17 @@ form.onsubmit = (e) => {
   // postData('/transactions', transactionData)
   // modalBg.style.display = 'none'
 }
+
+inputs.forEach(input => {
+  modalBtn.onclick = () => {
+    if (input.value || input.value !== '0') {
+      save()
+    }
+    else {
+      alert('Fill all the inputs')
+    }
+  }
+})
 
 getData('/cards?user_id=' + user.id)
   .then(res => {

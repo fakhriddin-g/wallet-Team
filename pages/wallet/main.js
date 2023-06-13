@@ -1,5 +1,6 @@
 import { reloadHeader } from "../../modules/header";
 import { getData, postData } from "../../modules/http.requests";
+import { regexPattern } from "../../modules/regex";
 import { reloadWallet } from "../../modules/ui";
 import { user } from "../../modules/user";
 
@@ -7,22 +8,20 @@ let welcomeEmail = document.querySelector('.welcome-email')
 let allWallet = document.querySelector('.all-wallets')
 let addWalletBtn = document.querySelector('.add-wallet-btn')
 let modalBg = document.querySelector('.modal-bg')
+let inputs = document.querySelectorAll('.modal input')
 let modalBtn = document.querySelector('.modal-btn')
 // Close Btn for Modal
 let closeBtn = document.querySelector('.close')
 let minimizeBtn = document.querySelector('.minimize')
 let form = document.forms.wallet
 
+// HEader Reload Function
 reloadHeader()
-
-// Get Local Storage
-// let localData = JSON.parse(localStorage.getItem('user'))
-
 
 // Welcombox Function
 welcomeEmail.innerHTML = user?.email
 
-// Wallet Function
+// Wallet Reload Function
 getData('/cards?user_id=' + user?.id)
   .then(res => {
     if (res.status === 200 || res.status === 201) {
@@ -42,6 +41,9 @@ addWalletBtn.onclick = () => {
 form.onsubmit = (e) => {
   e.preventDefault()
 
+}
+
+function save() {
   let walletData = {
     user_id: user?.id
   }
@@ -52,9 +54,20 @@ form.onsubmit = (e) => {
     walletData[key] = value
   })
 
-  postData('/cards', walletData)
-  modalBg.style.display = 'none'
+  // postData('/cards', walletData)
+  // modalBg.style.display = 'none'
 }
+
+inputs.forEach(input => {
+  modalBtn.onclick = () => {
+    if (input.value) {
+      save()
+    }
+    else {
+      alert('Fill all the inputs')
+    }
+  }
+})
 
 closeBtn.onclick = () => {
   modalBg.style.scale = '0'

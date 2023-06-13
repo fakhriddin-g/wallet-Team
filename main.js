@@ -1,24 +1,23 @@
+// Imports
 import { reloadHeader } from "./modules/header"
 import { getData } from "./modules/http.requests"
 import { reloadTransaction, reloadWallet } from "./modules/ui"
 import { user } from "./modules/user"
 
+// Get Elements
 let allWallet = document.querySelector('.all-wallets')
 let transactionTable = document.querySelector('.transaction-table')
 let welcomeName = document.querySelector('.welcome-name')
 let welcomeEmail = document.querySelector('.welcome-email')
 
-// Get Local Storage
-// let localData = JSON.parse(localStorage.getItem('user'))
-
-// Header Function
+// Header Reload Function
 reloadHeader()
 
 // Welcombox Function
 welcomeName.innerHTML = user?.name + ' ' + user?.surname
 welcomeEmail.innerHTML = user?.email
 
-// Wallet Function
+// Wallet Reload Function
 getData('/cards?user_id=' + user.id)
   .then(res => {
     if (res.status === 200 || res.status === 201) {
@@ -28,7 +27,7 @@ getData('/cards?user_id=' + user.id)
     }
   })
 
-// Transaction Function
+// Transaction Reload Function
 getData('/transactions?user_id=' + user.id)
   .then(res => {
     if (res.status === 200 || res.status === 201) {
