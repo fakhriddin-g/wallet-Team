@@ -24,4 +24,5 @@ form.onsubmit = (e) => {
 
     postData('/cards', card)
         .then(res => console.log(res))
+        location.assign('/wallet-Team/pages/cards')
 }
