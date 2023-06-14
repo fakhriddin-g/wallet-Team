@@ -1,5 +1,16 @@
 import { getData } from '../../modules/http';
 let doc = document
+let sel = document.querySelector('#currency')
+
+axois.get(import.meta.env.VITE_CURRENCY_API,{
+  headers:{
+   apiKey:import.meta.env.VITE_API_KEY
+  }
+})
+
+.then(res => console.log(res) )
+
+
 function textError(info, p, text) {
    p.innerText = text;
    info.style.display = 'flex';

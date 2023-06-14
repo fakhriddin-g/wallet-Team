@@ -3,6 +3,17 @@ import { user } from "../../modules/user";
 import { postData } from '../../modules/http';
 
 let form = document.forms.addWallet
+let select = document.querySelector('datalist')
+
+
+getSymbols()
+    .then(res => {
+        for(let key in res) {
+            let opt = new Option(key, key)
+            select.append(opt)
+        }
+    })
+
 
 
 
