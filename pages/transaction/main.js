@@ -15,6 +15,7 @@ let inputs = document.querySelectorAll('.modal input')
 let closeBtn = document.querySelector('.close')
 let minimizeBtn = document.querySelector('.minimize')
 let form = document.forms.transaction
+let selectBox = document.querySelector('.select')
 
 reloadHeader()
 
@@ -81,7 +82,6 @@ getData('/cards?user_id=' + user.id)
   })
 
 function select(arr) {
-  let selectBox = document.querySelector('.select')
   for (const option of arr) {
     let selectItem = document.createElement('option')
     selectItem.innerHTML = option.name
