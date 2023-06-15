@@ -1,12 +1,16 @@
 import { v4 as uuidv4 } from 'uuid'
 import { user } from "../../modules/user";
 import { postData } from '../../modules/http';
-
-let form = document.forms.addWallet
-
-
-
-
+import axios from 'axios';
+import { selectReload } from '../../modules/ui';
+let currenet = document.querySelector('#Currency');
+axios.get(import.meta.env.VITE_CURRENT_URL, {
+   headers: {
+      apiKey: import.meta.env.VITE_CURRENT_KEY
+   }
+})
+   .then(res => selectReload(res.data , currenet))
+let form = document.forms.addWallet;
 form.onsubmit = (e) => {
    e.preventDefault();
    let card = {

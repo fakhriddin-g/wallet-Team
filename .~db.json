@@ -112,6 +112,15 @@
       "price": "193456",
       "categories": "auto",
       "wallet_id": "a6e80439-8568-45d8-9039-f27f2e2085f0"
+    },
+    {
+      "id": "29834556-2c10-4cac-ab80-1a2ce41ed1ed",
+      "user_id": 1,
+      "time": "4 дня назад",
+      "name": "Humo",
+      "price": "93456",
+      "categories": "auto",
+      "wallet_id": "a6e80439-8568-45d8-9039-f27f2e2085f0"
     }
   ]
 }

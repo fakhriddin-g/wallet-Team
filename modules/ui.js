@@ -29,7 +29,7 @@ export function reloadTable(res, body) {
          if (i === 0) {
             td.innerText = n;
          } else if (i === 1) {
-            td.innerText = data.wallet_name;
+            td.innerText = data.name;
          } else if (i === 2) {
             td.innerText = data.categories;
          } else if (i === 3) {
@@ -65,4 +65,21 @@ export function getRandomColor() {
       color += letters[Math.floor(Math.random() * 16)];
    }
    return color;
+}
+
+export function selectReload(data, select) {
+   for(let item in data){
+      let option = document.createElement('option');
+      option.value = item;
+      option.innerText = item;
+      select.append(option);
+   }
+}
+export function carsdReload(data , select){
+   data.forEach(item => {
+      let option = document.createElement('option');
+      option.value = item.name;
+      option.innerText = item.name;
+      select.append(option)
+   });
 }
