@@ -9,7 +9,8 @@ axios.get(import.meta.env.VITE_CURRENT_URL, {
       apiKey: import.meta.env.VITE_CURRENT_KEY
    }
 })
-   .then(res => selectReload(res.data , currenet))
+   .then(res =>{ selectReload(res.data.data , currenet) , console.log(res);
+   })
 let form = document.forms.addWallet;
 form.onsubmit = (e) => {
    e.preventDefault();
