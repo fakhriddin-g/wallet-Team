@@ -1,13 +1,13 @@
 import { getData } from "../../modules/http.requests.js"
 import { validate } from "../../modules/regex.js"
 import { v4 as uuidv4 } from 'uuid';
-import { user } from "../../modules/user.js";
+import { card, user } from "../../modules/user.js";
 
-let about = document.forms.addWallet
-let inp = about.querySelector('input')
-let inputs = about.querySelectorAll('input')
-let pass = about.querySelector('#pass')
-let btn = about.querySelector('button')
+let addTransaction = document.forms.addTransaction
+let inp = addTransaction.querySelector('input')
+let inputs = addTransaction.querySelectorAll('input')
+let pass = addTransaction.querySelector('#pass')
+let btn = addTransaction.querySelector('button')
 
 // let patterns = {
 //     name: /^[a-zA-Z0-9._ %+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
@@ -18,7 +18,7 @@ let btn = about.querySelector('button')
 
 
 
-about.onsubmit = (e) => {
+addTransaction.onsubmit = (e) => {
 
     e.preventDefault()
 
@@ -39,16 +39,18 @@ about.onsubmit = (e) => {
         if (filled) {
             let transaction = {
                 id: uuidv4(),
-                user_id: user?.id
+                user_id: user?.id,
+                card_id: card?.id,
+                date: new Date().getDate()
             }
-            let fm = new FormData(about)
+            let fm = new FormData(addTransaction)
 
             fm.forEach((value, key) => {
                 transaction[key] = value
             })
             location.assign("/pages/myTransaction/")
 
-            postData("/transactions/", transaction)
+            postData("/transactions", transaction)
                 .then(res => console.log(res))
 
 

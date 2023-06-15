@@ -111,6 +111,7 @@ form {
     gap: 10px;
 }
 
+#currency,
 input {
     width: 438px;
     height: 56px;
@@ -173,4 +174,10 @@ button {
     &::placeholder {
         color: red;
     }
+}
+
+#currency {
+    width: 100%;
+
+    option {}
 }

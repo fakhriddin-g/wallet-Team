@@ -1,21 +1,5 @@
 {
-  "users": [
-    {
-      "name": "Андрей",
-      "surname": "Кузнецов",
-      "email": "refabatya@gmail.com",
-      "pass": "3214rt",
-      "id": 1
-    }
-  ],
-  "cards": [
-    {
-      "id": "3710605d-a032-4931-8c3e-33de30594aad",
-      "user_id": 1,
-      "name": "Андрей",
-      "balance": "3214",
-      "valuta": "usd"
-    }
-  ],
+  "users": [],
+  "cards": [],
   "transactions": []
 }

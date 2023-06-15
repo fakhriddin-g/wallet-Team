@@ -14,6 +14,9 @@ let email = document.querySelector("#email")
 let myWallets = document.querySelector(".myWallets")
 let tbody = document.querySelector("tbody")
 
+// name.innerHTML = user.name
+// email.innerHTML = user.email
+
 sign_out.onclick = () => {
     location.assign("/pages/about/")
     localStorage.removeItem("user")
@@ -65,8 +68,6 @@ if (allWallets !== null) {
 }
 
 
-// name.innerHTML = user.name
-// email.innerHTML = user.email
 
 
 

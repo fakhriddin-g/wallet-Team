@@ -50,7 +50,7 @@ export function header() {
     }
     hide.onclick = () => {
         if (hide.innerHTML === "X") {
-            header.style.top = "-11%"
+            header.style.top = "-70px"
             hide.innerHTML = "Show links"
         } else {
             header.style.top = "0%"

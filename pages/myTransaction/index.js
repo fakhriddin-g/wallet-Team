@@ -1,6 +1,6 @@
 import { reloadTransactions } from "../../modules/reload"
 import { getData } from "../../modules/http.requests"
-import { user } from "../../modules/user"
+import { card, user } from "../../modules/user"
 import { header } from "../../modules/header"
 export let modal = document.querySelector(".modal")
 export let modal_bg = document.querySelector(".modal_bg")
@@ -8,7 +8,7 @@ let close = document.querySelectorAll(".close")
 let sign_out = document.querySelector(".modal button")
 let email = document.querySelector("#email")
 let tbody = document.querySelector("tbody")
-let addTransaction = document.querySelector("#addTransaction")
+let addTransaction = document.querySelector("#addTransactions")
 
 header()
 
@@ -32,16 +32,16 @@ close.forEach(btn => {
 })
 
 
-getData('/transactions?id=' + user.id)
+getData('/transactions?card_id=' + card.id)
     .then(res => {
         if (res.status === 200 || res.status === 201) {
             reloadTransactions(res.data, tbody)
         }
     })
-    
-    // addTransaction.onclick = () => {
-    //     location.assign("/pages/addTransaction/")
-    // }
+
+addTransaction.onclick = () => {
+    location.assign("/pages/addTransaction/")
+}
 
 
 

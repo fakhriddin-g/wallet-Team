@@ -22,7 +22,7 @@ inputs.forEach(inp => {
 })
 
 reg.onsubmit = (e) => {
-
+    
     e.preventDefault()
 
     let filled = true
@@ -32,6 +32,7 @@ reg.onsubmit = (e) => {
 
         if (inp.value.length === 0 || inp.classList.contains("error")) {
             filled = false
+            btn.innerHTML = "Fill the fill"
             btn.style.backgroundColor = "red"
             inp.classList.add("error")
         }
@@ -51,14 +52,9 @@ reg.onsubmit = (e) => {
                 if (res.data.length !== 0) {
                     btn.innerHTML = "Account is already exist"
                     btn.style.backgroundColor = "red"
-                    // modal.style.opacity = "1"
-                    // modal.style.scale = "1"
-                    // setTimeout(() => {
-                        //     modal.style.display = "block"
-                        // }, 300);
-                    }
-                    else {
-                        postData("/users", user)
+                }
+                else {
+                    postData("/users", user)
                         .then(res => {
                             btn.innerHTML = "Submit"
                             btn.style.backgroundColor = "#0047FF"
@@ -82,13 +78,13 @@ reg.onsubmit = (e) => {
 show.onclick = () => {
     if (pass.type !== "text") {
 
-        show.style.backgroundImage = `url("https://go.wepro.uz/_nuxt/img/monkey.ad68af6.png")`
+        show.style.backgroundImage = `url("https://em-content.zobj.net/thumbs/120/apple/354/monkey-face_1f435.png")`
         show.style.width = "100px"
         pass.type = "text"
 
     } else {
 
-        show.style.backgroundImage = `url("https://go.wepro.uz/_nuxt/img/monkey-closed.397bfe9.png")`
+        show.style.backgroundImage = `url("https://em-content.zobj.net/thumbs/120/apple/354/see-no-evil-monkey_1f648.png")`
         pass.type = "password"
         show.style.width = "30px"
 

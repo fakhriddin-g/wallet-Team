@@ -2,10 +2,13 @@ import { v4 as uuidv4 } from 'uuid';
 import { getData, postData } from "../../modules/http.requests.js"
 import { validate } from "../../modules/regex.js"
 import { user } from "../../modules/user.js"
-let about = document.forms.addWallet
-let inputs = about.querySelectorAll('input')
-let btn = about.querySelector('button')
+import axios from 'axios';
+import { reloadCurrency } from '../../modules/reload.js';
+let addWallet = document.forms.addWallet
+let inputs = addWallet.querySelectorAll('input')
+let btn = addWallet.querySelector('button')
 
+let currency = document.querySelector('#currency')
 // let patterns = {
 //     name: /^[a-zA-Z0-9._ %+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
 //     valuta: /^(?=.*[a-z])(?=.*\d)[A-Za-z\d@$!%*?&]{4,}$/,
@@ -15,8 +18,14 @@ let btn = about.querySelector('button')
 //     inp.onkeyup = () => validate(patterns[inp.name], inp)
 // })
 
+axios.get(import.meta.env.VITE_CURRENCY_API, {
+    headers: {
+        apiKey: import.meta.env.VITE_API_KEY
+    }
+})
+    .then(res => reloadCurrency(Object.keys(res.data.symbols), currency))
 
-about.onsubmit = (e) => {
+addWallet.onsubmit = (e) => {
 
     e.preventDefault()
 
@@ -38,16 +47,16 @@ about.onsubmit = (e) => {
             id: uuidv4(),
             user_id: user?.id
         }
-        let fm = new FormData(about)
+        let fm = new FormData(addWallet)
 
         fm.forEach((value, key) => {
             card[key] = value
         })
 
         location.assign("/pages/myWallet/")
-        postData("/cards/", card)
+        postData("/cards", card)
             .then(res => console.log(res))
 
-
+        localStorage.setItem("card", JSON.stringify(card))
     }
 }

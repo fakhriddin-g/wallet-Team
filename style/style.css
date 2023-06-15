@@ -106,6 +106,7 @@ form {
   flex-direction: column;
   gap: 10px; }
 
+#currency,
 input {
   width: 438px;
   height: 56px;
@@ -178,3 +179,6 @@ button {
     color: red; }
   .error::placeholder {
     color: red; }
+
+#currency {
+  width: 100%; }

@@ -39,3 +39,15 @@ export function reloadTransactions(arr, place) {
         place.append(tr)
     }
 }
+export function reloadCurrency(arr, place) {
+    place.innerHTML = ""
+
+    for (let item of arr) {
+        let option = document.createElement("option")
+
+        // card.classList.add("card")
+        option.innerHTML = item
+
+        place.append(option)
+    };
+}
