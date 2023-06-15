@@ -30,9 +30,9 @@ export function reloadTransactions(arr, place) {
         let date = document.createElement("td")
 
         id.innerHTML = (Math.random() + 9999).toFixed(8).slice(5, 10)
-        title.innerHTML = item.title
+        title.innerHTML = item.name
         category.innerHTML = item.category
-        amount.innerHTML = item.amount.toLocaleString("UZ-uz")
+        amount.innerHTML = item.sum.toLocaleString("uz-UZ")
         date.innerHTML = item.date
 
         tr.append(id, title, category, amount, date)

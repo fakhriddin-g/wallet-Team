@@ -38,15 +38,16 @@ let allPay = document.querySelector("#allPay")
 
 header()
 
-getData("/cards/" + localedData.id)
+getData("/cards?user_id=" + localedData.id)
     .then(res => {
         if (res.status === 200 || res.status === 201) {
             reloadWallet(res.data.slice(0, 4), myWallets)
         }
     })
 
-getData("/transaction/" + localedData.id)
+getData("/transactions?user_id=" + localedData.id)
     .then(res => {
+        console.log(res);
         if (res.status === 200 || res.status === 201) {
             reloadTransactions(res.data.slice(0, 7), tbody)
         }

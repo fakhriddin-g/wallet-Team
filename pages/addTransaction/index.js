@@ -1,4 +1,4 @@
-import { getData } from "../../modules/http.requests.js"
+import { getData, postData } from "../../modules/http.requests.js"
 import { validate } from "../../modules/regex.js"
 import { v4 as uuidv4 } from 'uuid';
 import { card, user } from "../../modules/user.js";
@@ -48,12 +48,11 @@ addTransaction.onsubmit = (e) => {
             fm.forEach((value, key) => {
                 transaction[key] = value
             })
-            location.assign("/pages/myTransaction/")
-
+            
             postData("/transactions", transaction)
-                .then(res => console.log(res))
-
-
+                .then(res => {
+                    location.assign("/pages/myTransaction/")
+                })  
         }
     }
 }

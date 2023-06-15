@@ -1,5 +1,23 @@
 {
   "users": [],
-  "cards": [],
-  "transactions": []
+  "cards": [
+    {
+      "id": "3c8753a3-2b2d-4ea6-8a38-a17626c98074",
+      "user_id": 0.8890849395915865,
+      "name": "Daler",
+      "balance": "2222",
+      "valuta": "111"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "4b67e643-691a-4aeb-bddc-a5a8a301602b",
+      "user_id": 0.8890849395915865,
+      "card_id": "3c8753a3-2b2d-4ea6-8a38-a17626c98074",
+      "date": 15,
+      "name": "Daler",
+      "category": "car",
+      "sum": "1000"
+    }
+  ]
 }
