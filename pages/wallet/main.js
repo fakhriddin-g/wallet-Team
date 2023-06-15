@@ -85,9 +85,8 @@ minimizeBtn.onclick = () => {
 
 function select(object) {
   for (const key in object) {
-    const element = object[key];
     let selectItem = document.createElement("option");
-    selectItem.innerHTML = element;
+    selectItem.innerHTML = key;
     selectBox.append(selectItem);
   }
 }
@@ -98,6 +97,5 @@ axios.get(import.meta.env.VITE_CURRENCY_API, {
   }
 })
 .then((res) => {
-  console.log(res.data.symbols);
   select(res.data.symbols);
 })
