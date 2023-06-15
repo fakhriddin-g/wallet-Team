@@ -7,7 +7,7 @@ let body = document.querySelector('tbody');
 
 reloadHeader()
 
-getData('/transaction/')
+getData('/transactions/')
    .then(res => {
       if (res.status == 200 || res.status === 201) {
          if (body !== null) reloadTable(res.data, body);

@@ -9,7 +9,7 @@ let localedUser = JSON.parse(localStorage.getItem('user')) || {}
 reloadHeader()
 
 //вызовы
-getData('/cards/' + localedUser.id)
+getData('/cards?user_id=' + localedUser?.id)
    .then(res => {
       if (res.status == 200 || res.status === 201) {
          if(res.data.length > 0) {
@@ -18,7 +18,7 @@ getData('/cards/' + localedUser.id)
       }
    })
 
-getData('/transaction/')
+getData('/transaction?user_id=' + localedUser?.id)
    .then(res => {
       if (res.status == 200 || res.status === 201) {
          if(res.data.length > 0) {

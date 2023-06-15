@@ -17,13 +17,6 @@
   ],
   "cards": [
     {
-      "id": "87748753-e6e1-4ebf-9ee1-6b223b0b5a29",
-      "user_id": 1,
-      "name": "Visa",
-      "balance": "12000",
-      "currency": "USD"
-    },
-    {
       "id": "736f5c24-74bf-4411-80ea-6c647ce17878",
       "user_id": 1,
       "name": "Ozodgdewifi",
@@ -36,17 +29,74 @@
       "name": "Humo",
       "balance": "10000",
       "currency": "dirhum"
+    },
+    {
+      "id": "9634d6ff-0b4d-4e72-b5d7-790a13970304",
+      "user_id": 2,
+      "name": "Visa",
+      "balance": 20,
+      "currency": "USD"
     }
   ],
-  "transaction": [
+  "transactions": [
     {
-      "fromWallet": "123",
-      "price": "123456",
-      "categories": "auto",
-      "userId": 1,
-      "time": "4 дня назад",
-      "welletId": 1,
-      "id": 1
+      "id": 213213123123,
+      "user_id": 2,
+      "card": {
+        "id": 2,
+        "name": "Visa"
+      },
+      "category": "food",
+      "amount": 10000,
+      "date": "2023-06-15 17:33"
+    },
+    {
+      "id": "a5d9226e-f078-4ca3-9729-76c3d2c508a1",
+      "user_id": 2,
+      "date": "2023-6-15 18:0",
+      "card": {
+        "id": "9634d6ff-0b4d-4e72-b5d7-790a13970304",
+        "name": "Visa",
+        "balance": "100"
+      },
+      "amount": "30",
+      "category": "food"
+    },
+    {
+      "id": "3d2905ef-5a3c-4770-9f9b-2cfe913a40d1",
+      "user_id": 2,
+      "date": "2023-6-15 18:0",
+      "card": {
+        "id": "9634d6ff-0b4d-4e72-b5d7-790a13970304",
+        "name": "Visa",
+        "balance": 70
+      },
+      "amount": "30",
+      "category": "food"
+    },
+    {
+      "id": "6d910aa0-3061-4a36-86b9-194587878b90",
+      "user_id": 2,
+      "date": "2023-6-15 18:1",
+      "card": {
+        "id": "9634d6ff-0b4d-4e72-b5d7-790a13970304",
+        "name": "Visa",
+        "balance": 40
+      },
+      "amount": "10",
+      "category": "car"
+    },
+    {
+      "id": "011ec597-18e9-4e0d-85f5-de1887e60e3e",
+      "user_id": 2,
+      "date": "2023-6-15 18:2",
+      "card": {
+        "id": "9634d6ff-0b4d-4e72-b5d7-790a13970304",
+        "name": "Visa",
+        "balance": 30
+      },
+      "amount": "10",
+      "category": "food"
     }
   ]
 }
