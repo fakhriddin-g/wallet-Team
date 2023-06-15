@@ -20,7 +20,7 @@
       "id": "a6e80439-8568-45d8-9039-f27f2e2085f0",
       "user_id": 1,
       "name": "Humo",
-      "balance": null,
+      "balance": 999999989999,
       "currency": "USB"
     },
     {
@@ -110,6 +110,15 @@
       "time": "4 дня назад",
       "name": "Humo",
       "price": "193456",
+      "categories": "auto",
+      "wallet_id": "a6e80439-8568-45d8-9039-f27f2e2085f0"
+    },
+    {
+      "id": "4bbe601f-533c-4ebb-91a9-901cf0c2fb27",
+      "user_id": 1,
+      "time": "4 дня назад",
+      "name": "Humo",
+      "price": "10000",
       "categories": "auto",
       "wallet_id": "a6e80439-8568-45d8-9039-f27f2e2085f0"
     }

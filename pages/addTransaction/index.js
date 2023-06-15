@@ -37,7 +37,8 @@ form.onsubmit = (e) => {
                let arr = res.data.find(item => item.name === data.name) || [];
                if (arr !== null) {
                   if (+data.price <= +arr.balance) {
-                     // axios.patch('http://localhost:5050/cards/'+arr?.id, { balance: +arr.balance - +data.balance })
+                     let price = arr.balance - data.price;
+                     axios.patch('http://localhost:5050/cards/'+arr?.id, { balance: price})
                      data.wallet_id = arr.id;
                      postData('/transaction', data);
                      location.assign('/pages/transaction/')
