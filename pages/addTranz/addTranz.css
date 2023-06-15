@@ -85,3 +85,18 @@ button:active {
   box-shadow: 0 0 8px 8px red;
   color: red;
 }
+
+select {
+    outline: none;
+    width: 438px;
+    height: 56px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    padding: 18px 25px;
+    margin-top: 8px;
+}
+
+option {
+    outline: none;
+}

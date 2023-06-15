@@ -20,5 +20,14 @@
       "name": "Visa"
     }
   ],
-  "transactions": []
+  "transactions": [
+    {
+      "id": "f471fbaf-fd46-4b21-b5cf-84cb4d3311c9",
+      "user_id": 0.916586212145786,
+      "card_id": 123332,
+      "from": "Visa",
+      "valuta": "400001",
+      "categ": "food"
+    }
+  ]
 }

@@ -12,7 +12,7 @@ const getUser = () => {
         .then(res => res.json())
 }
 
-inpEmail.value = userData.email
+inpEmail.value = userData?.email
 
 
 let inps = document.querySelectorAll('input')
@@ -44,7 +44,7 @@ function validate(regex, field) {
 form.onsubmit = (e) => {
     e.preventDefault();
 
-    getData("/users")
+    getData("/users?email=" + inpEmail.value)
     .then(res => {
         if(res.data[0].password == inpPas.value) {
             let user = {
