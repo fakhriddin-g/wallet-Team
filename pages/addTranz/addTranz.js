@@ -4,6 +4,7 @@ import { postData } from '../../modules/http';
 import { getData } from '../../modules/http';
 let form = document.forms.add
 let inps = document.querySelectorAll('input')
+let inpBal = document.querySelector('.')
 let continueBtn = document.querySelector('.continue')
 let isFormValid
 let count = 123332
@@ -35,10 +36,6 @@ form.onsubmit = (e) => {
             e.preventDefault();
 
            isFormValid = true;
-
-       
-
-           
 
     inps.forEach(inp => {
         if (inp.value.length < 3) {

@@ -34,6 +34,8 @@ function validate(regex, field) {
     }
 }
 
+let count = 1
+
 form.onsubmit = (e) => {
     e.preventDefault();
 
@@ -50,7 +52,7 @@ form.onsubmit = (e) => {
 
     if (isFormValid) {
         let userInfo = {
-            id: Math.random()
+            id: count
         }
 
         let formData = new FormData(form);
@@ -61,15 +63,16 @@ form.onsubmit = (e) => {
 
         localStorage.setItem("user", JSON.stringify(userInfo))
 
-        location.assign("pages/about/")
 
         let json = JSON.stringify(userInfo);
 
         creatUser(json);
 
+        location.assign("/pages/sign-in/")
+
         form.reset();
 
-        location.assign("/pages/about/")
+        count++
     }
 }
 

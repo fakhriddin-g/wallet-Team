@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,20 +8,36 @@
     <link rel="stylesheet" href="./addWallet.css">
     <title>Document</title>
 </head>
+
 <body>
-    
+
     <div class="container">
         <h1>Добавить кошелек</h1>
         <form name="add">
-        <input type="text" name="name" placeholder="Имя" class="input inp-email">
-        <br>
-        <select name="valuta" id=""></select>
-        <br>
-        <button class="continue">Добавить</button>
-      </form>
-  
-      </div>
+            <input type="text" name="name" placeholder="Имя" class="input inp-email">
+            <br>
+            <input list="browsers" name="valuta" placeholder="Валюта" class="input">
+             <br>
+             <input type="number" name="balance" placeholder="Введитте свой баланс" class="input">
+
+            <datalist id="browsers">
+                <option value="Internet Explorer">
+                <option value="Firefox">
+                <option value="Google Chrome">
+                <option value="Opera">
+                <option value="Safari">
+            </datalist><br>
+
+
+            <input type="color" name="colorLeft" class="inp-color"> <span>:Выберите цвет левой части карты</span> <br>
+            <input type="color" name="colorRight" class="inp-color"> <span>:Выберите цвет левой части карты</span>
+            <br>
+            <button class="continue">Добавить</button>
+        </form>
+
+    </div>
 
     <script type="module" src="./addWallet.js"></script>
 </body>
+
 </html>

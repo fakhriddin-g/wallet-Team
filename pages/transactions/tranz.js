@@ -2,6 +2,16 @@ import { header } from '../../modules/header'
 import { getData } from '../../modules/http';
 import { reloadTranz } from "../../modules/ui";
 let tranzBlock = document.querySelector('.tranz-block')
+let cen = document.querySelector('.center')
+
+getData('/transactions/?user_id=' + localedUser.id)
+.then(res => {
+   if(res.data.length > 0) {
+       cen.style.display = 'none'
+   } else {
+      cen.style.display = 'block'
+   }
+})
 
 
 let tBody = document.querySelector('.tBody')

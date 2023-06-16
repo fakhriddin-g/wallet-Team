@@ -1,3 +1,5 @@
+import { getData } from './http';
+
 function getRandomColor() {
     const letters = '0123456789ABCDEF';
     let color = '#';
@@ -11,22 +13,27 @@ export function reload(arr, place) {
     place.innerHTML = '';
 
     for (let item of arr) {
+
         let card = document.createElement('div')
         let h3Card = document.createElement('h3')
         let pCard = document.createElement('p')
 
         h3Card.innerHTML = item.name
-        pCard.innerHTML = item.value
+        pCard.innerHTML = item.valuta
 
-        const color1 = getRandomColor();
-        const color2 = getRandomColor();
-        card.style.background = `linear-gradient(to right, ${color1}, ${color2})`;
+            const color1 = item.colorLeft;
+            const color2 = item.colorRight;
+            card.style.background = `linear-gradient(to right, ${color1}, ${color2})`;
+            
         card.classList.add('card')
 
         place.append(card)
         card.append(h3Card, pCard)
     }
 }
+
+
+
 export function reloadTranz(res, body) {
     body.innerHTML = ''
     for (let item of res) {

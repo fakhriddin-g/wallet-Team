@@ -74,7 +74,6 @@ header {
     margin-top: 20px;
     display: flex;
     gap: 30px;
-    animation: scroll 5s linear infinite;
     margin-bottom: 21px;
     width: 2400px;
 }
@@ -153,4 +152,53 @@ table td {
 
   .tranz-block h2 {
     margin-top: 40px;
+  }
+
+  .null-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: gray;
+  }
+
+  .anime {
+    animation: scroll 5s linear infinite;
+  }
+
+  .null-card button {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+    text-align: center;
+    color: rgb(65, 63, 63);
+    background-color: white;
+    transition: .3s;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .null-card button:hover {
+    box-shadow: 0 0 10px 10px rgb(65, 63, 63);
+    background-color: white;
+    color: rgb(65, 63, 63);
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  center button {
+    padding: 10px;
+    border: none;
+    background-color: gray;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s;
+  }
+
+  center button:hover {
+    box-shadow: 0 0 10px 10px gray;
+    background-color: white;
+    color: gray;
   }

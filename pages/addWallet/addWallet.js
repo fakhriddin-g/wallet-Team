@@ -45,6 +45,7 @@ form.onsubmit = (e) => {
     
             location.assign('/pages/wallet/')
     
+            console.log(card);
             form.reset()
     }
 

@@ -1,24 +1,32 @@
 {
   "users": [
     {
-      "id": 0.916586212145786,
+      "id": 0.9666489061836918,
       "email": "amalabdurahmonov427@gmail.com",
-      "name": "amal",
+      "name": "Visa",
       "surname": "aaaaaaaaaaaaaaa",
-      "password": "2222"
+      "password": "1234"
     }
   ],
   "cards": [
     {
-      "id": "b8677e59-7f68-4ddf-afec-5087897decfc",
-      "user_id": 0.916586212145786,
-      "name": "amal"
-    },
-    {
-      "id": "93a2d18c-4a27-4b11-a013-f85b664803c3",
-      "user_id": 0.916586212145786,
-      "name": "Visa"
+      "id": "338d65fe-c481-40f4-980f-2ac9d1258eb8",
+      "user_id": 0.9666489061836918,
+      "name": "amal",
+      "valuta": "Safari",
+      "balance": "30000",
+      "colorLeft": "#fa0000",
+      "colorRight": "#975959"
     }
   ],
-  "transactions": []
+  "transactions": [
+    {
+      "id": "3258b8f3-2b6f-4ded-ab24-b215e535d2fe",
+      "user_id": 0.9666489061836918,
+      "card_id": 123332,
+      "from": "Visa",
+      "valuta": "500000",
+      "categ": "food"
+    }
+  ]
 }

@@ -85,3 +85,15 @@ button:active {
   box-shadow: 0 0 8px 8px red;
   color: red;
 }
+
+option {
+    outline: none;
+}
+
+
+.inp-color {
+    /* margin-right: 24%; */
+    margin-top: 8px;
+    width: 35px;
+    height: 30px;
+}

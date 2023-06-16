@@ -3,6 +3,18 @@ import { getData } from '../../modules/http';
 import { reload } from "../../modules/ui";
 
 let userData = JSON.parse(localStorage.getItem("user"))
+let nullCard = document.querySelector('.null-card')
+
+getData('/cards/?user_id=' + localedUser.id)
+.then(res => {
+   if(res.data.length > 0) {
+      nullCard.style.display = 'none'
+      cardBlock.classList.add('anime')
+   } else {
+      nullCard.style.display = 'flex'
+      cardBlock.classList.remove('anime')
+   }
+})
 
 getData('/cards/?user_id=' + localedUser.id)
    .then(res => {

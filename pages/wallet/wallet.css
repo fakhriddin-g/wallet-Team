@@ -78,7 +78,6 @@ header {
     margin-top: 60px;
     display: flex;
     gap: 30px;
-    animation: scroll 5s linear infinite;
     margin-bottom: 21px;
     width: 1400px;
     flex-wrap: wrap;
@@ -134,3 +133,36 @@ header {
     color: #0047FF;
     font-weight: 600;
 }
+
+.null-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: gray;
+  }
+
+  .anime {
+    animation: scroll 5s linear infinite;
+  }
+
+  .null-card button {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+    text-align: center;
+    color: rgb(65, 63, 63);
+    background-color: white;
+    transition: .3s;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .null-card button:hover {
+    box-shadow: 0 0 10px 10px rgb(65, 63, 63);
+    background-color: white;
+    color: rgb(65, 63, 63);
+    font-size: 16px;
+    font-weight: 600;
+  }

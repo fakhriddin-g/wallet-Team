@@ -29,7 +29,7 @@ export function header() {
         let con = confirm('sure?')
 
         if(con == true) {
-            location.assign("/pages/about/")
+            location.assign("/pages/sign-in/")
         }
     }
 

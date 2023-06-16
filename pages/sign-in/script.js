@@ -12,7 +12,11 @@ const getUser = () => {
         .then(res => res.json())
 }
 
-inpEmail.value = userData?.email
+if(userData) {
+    inpEmail.value = userData?.email
+} else {
+    inpEmail.value = ''
+}
 
 
 let inps = document.querySelectorAll('input')
@@ -41,15 +45,20 @@ function validate(regex, field) {
     }
 }
 
+
+
 form.onsubmit = (e) => {
     e.preventDefault();
 
     getData("/users?email=" + inpEmail.value)
     .then(res => {
+        console.log(res.data[0].password);
+
         if(res.data[0].password == inpPas.value) {
             let user = {
                 id: Math.random()
             }
+
     
             let fm = new FormData(form)
         
@@ -57,8 +66,8 @@ form.onsubmit = (e) => {
                 user[key] = value
             })
         
-        
             location.assign("/")
+        
         
             form.reset()
         
@@ -69,6 +78,7 @@ form.onsubmit = (e) => {
         inps.forEach((inp) => {
             inp.classList.add('error')
         })
+        continueBtn.innerHTML = 'Неправильный пароль'
     }
     })
   
