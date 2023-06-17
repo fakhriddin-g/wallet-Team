@@ -1,28 +1,5 @@
 {
-  "users": [
-    {
-      "name": "Refat",
-      "surname": "Islyamov",
-      "email": "refabatya@gmail.com",
-      "pass": "3214rt",
-      "id": 1
-    },
-    {
-      "name": "Андрей",
-      "surname": "Кузнецов",
-      "email": "elvira.axmedova@merospharm.uz",
-      "pass": "3214rt",
-      "id": 2
-    }
-  ],
-  "cards": [
-    {
-      "id": "29918c9a-3069-4c17-b435-efe720e17c91",
-      "user_id": 1,
-      "name": "Visa",
-      "balance": "123123",
-      "valuta": "UZS"
-    }
-  ],
-  "transactions": []
+    "users": [],
+    "cards": [],
+    "transactions": []
 }

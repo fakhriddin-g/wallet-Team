@@ -1,5 +1,5 @@
 import { header } from "./modules/header"
-import { reloadTransactions, reloadWallet } from "./modules/reload"
+import { reloadEmptyTransactions, reloadEmptyWallet, reloadTransactions, reloadWallet } from "./modules/reload"
 import { getData } from "./modules/http.requests"
 import { user } from "./modules/user"
 
@@ -20,31 +20,40 @@ header()
 getData("/cards?user_id=" + user.id)
     .then(res => {
         if (res.status === 200 || res.status === 201) {
-            reloadWallet(res.data.slice(0, 4), myWallets)
+            if (res.data.length) {
+                reloadWallet(res.data.slice(0, 4), myWallets)
+            } else {
+                reloadEmptyWallet(myWallets)
+            }
         }
     })
 
 getData("/transactions?user_id=" + user.id)
     .then(res => {
         if (res.status === 200 || res.status === 201) {
-            reloadTransactions(res.data.slice(0, 7), tbody)
+            if (res.data.length) {
+            reloadTransactions(res.data.slice(0, 7), tbody)   
+            }
+            else{
+                reloadEmptyTransactions(tbody)   
+            }
         }
     })
 
 
-if (allWallets !== null) {
 
-    allWallets.onclick = () => {
-        location.assign("/pages/myWallet/")
-    }
+
+allWallets.onclick = () => {
+    location.assign("/pages/myWallet/")
 }
 
-if (allWallets !== null) {
 
-    allPay.onclick = () => {
-        location.assign("/pages/myTransaction/")
-    }
+
+
+allPay.onclick = () => {
+    location.assign("/pages/myTransaction/")
 }
+
 
 
 

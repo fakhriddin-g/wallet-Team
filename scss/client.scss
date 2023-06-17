@@ -188,6 +188,7 @@ nav {
     }
 }
 
+.empty,
 .card {
     width: 282px;
     height: 160px;
@@ -211,7 +212,35 @@ nav {
     }
 }
 
+.empty {
+    position: relative;
+    &::after,&::before{
+        content: '';
+        position: absolute;
+        border-radius: 100px;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        width: 30px;
+        height: 5px;
+        background: #dcdcdc;
+    }
+    &::before{
+        z-index: 1;
+        rotate: 90deg;
+    }
+}
 
+.plus {
+    position: absolute;
+    border-radius: 100%;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 50px;
+    height: 50px;
+    background: #8c7e7e;
+}
 
 h2 {
     font-weight: 500;

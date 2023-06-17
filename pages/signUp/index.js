@@ -1,5 +1,6 @@
 import { getData, postData } from "/modules/http.requests.js";
 import { validate } from "/modules/regex.js";
+
 let reg = document.forms.reg
 let inputs = reg.querySelectorAll('input')
 let btn = reg.querySelector('button')
@@ -22,7 +23,7 @@ inputs.forEach(inp => {
 })
 
 reg.onsubmit = (e) => {
-    
+
     e.preventDefault()
 
     let filled = true

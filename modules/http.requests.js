@@ -25,3 +25,14 @@ export const getData = async (path) => {
         return e
     }
 }
+export const patchData = async (path, body) => {
+    try {
+        const res = await axios.patch(BASE_URL + path, body)
+        if (res.status === 200 || res.status === 201) {
+            return res
+        }
+
+    } catch (e) {
+        return e
+    }
+}

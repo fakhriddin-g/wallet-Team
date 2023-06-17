@@ -47,7 +47,7 @@ export function reloadTransactions(arr, place) {
         let date = document.createElement("td")
 
         id.innerHTML = (Math.random() + 9999).toFixed(8).slice(5, 10)
-        title.innerHTML = item.name
+        title.innerHTML = item.name.name
         category.innerHTML = item.category
         amount.innerHTML = item.sum.toLocaleString("uz-UZ")
         date.innerHTML = item.date
@@ -58,3 +58,40 @@ export function reloadTransactions(arr, place) {
 }
 
 
+export function reloadEmptyWallet(place) {
+
+    let card = document.createElement("div")
+    let plus = document.createElement("div")
+
+    card.classList.add("empty")
+    plus.classList.add("plus")
+
+    card.style.background = "#ddcdcd"
+
+    card.append(plus)
+    place.append(card)
+
+    card.onclick = () => {
+        location.assign("/pages/addWallet/")
+    }
+
+}
+
+export function reloadEmptyTransactions(place) {
+
+    let tr = document.createElement("tr")
+    let id = document.createElement("td")
+    let title = document.createElement("td")
+    let category = document.createElement("td")
+    let amount = document.createElement("td")
+    let date = document.createElement("td")
+
+    id.innerHTML = 'There'
+    title.innerHTML = "is"
+    category.innerHTML = "no"
+    amount.innerHTML = "transactions"
+    date.innerHTML = "!"
+
+    tr.append(id, title, category, amount, date)
+    place.append(tr)
+}

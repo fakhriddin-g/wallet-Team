@@ -151,6 +151,7 @@ nav {
     font-weight: 500;
     border-bottom: 1px solid #B9C0D1; }
 
+.empty,
 .card {
   width: 282px;
   height: 160px;
@@ -162,12 +163,40 @@ nav {
   justify-content: space-between;
   color: #FFF;
   cursor: pointer; }
+  .empty h3,
   .card h3 {
     font-weight: 0;
     font-size: 24px; }
+  .empty p,
   .card p {
     font-weight: 700;
     font-size: 14px; }
+
+.empty {
+  position: relative; }
+  .empty::after, .empty::before {
+    content: '';
+    position: absolute;
+    border-radius: 100px;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 30px;
+    height: 5px;
+    background: #dcdcdc; }
+  .empty::before {
+    z-index: 1;
+    rotate: 90deg; }
+
+.plus {
+  position: absolute;
+  border-radius: 100%;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 50px;
+  height: 50px;
+  background: #8c7e7e; }
 
 h2 {
   font-weight: 500;

@@ -9,6 +9,7 @@ let inputs = addWallet.querySelectorAll('input')
 let btn = addWallet.querySelector('button')
 
 let dataList = document.querySelector('#valuta-list')
+let walletList = document.querySelector('#wallet-list')
 
 let localedSymbols = JSON.parse(localStorage.getItem("symbols")) || null
 
@@ -21,7 +22,7 @@ let localedSymbols = JSON.parse(localStorage.getItem("symbols")) || null
 //     inp.onkeyup = () => validate(patterns[inp.name], inp)
 // })
 
-if (localedSymbols) {
+if (!localedSymbols) {
 
     axios.get(import.meta.env.VITE_CURRENCY_API, {
         headers: {
@@ -35,6 +36,9 @@ if (localedSymbols) {
             }
         })
 
+}
+else {
+    setOption(localedSymbols)
 }
 
 function setOption(data) {
