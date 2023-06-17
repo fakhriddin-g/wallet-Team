@@ -7,7 +7,8 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-   <title>Регестрация</title>
+   <script src="/modules/guard.js"></script>
+   <title>Вход в аккаунт</title>
    <style>
       * {
          padding: 0;
@@ -17,10 +18,10 @@
       }
 
       .wrapper {
-         margin-top: 100px;
+         margin-top: 150px;
       }
 
-      .regForm {
+      .loginForm {
          width: 400px;
          margin: 0 auto;
          display: flex;
@@ -42,14 +43,6 @@
          border: 1px solid #000000;
          border-radius: 10px;
          padding: 20px 25px;
-      }
-
-      input::placeholder {
-         font-family: 'Gilroy';
-         font-style: normal;
-         font-weight: 600;
-         font-size: 16px;
-         line-height: 20px;
       }
 
       button {
@@ -77,27 +70,32 @@
          margin-top: 30px;
       }
 
-      @media(max-width: 327px) {
-         .regForm {
-            width: 327px;
+      @media(max-width: 320px) {
+
+         .loginForm,
+         input {
+            width: 320px;
          }
       }
 
       @media (max-width: 340px) {
-         .regForm {
+
+         .loginForm,
+         input {
             width: 340px;
          }
       }
 
       @media(max-width: 360px) {
-         .regForm {
+
+         .loginForm,
+         input {
             width: 360px;
          }
+
       }
-      .error{
-         border: 2px solid red;
-      }
-      .info{
+
+      .info {
          display: none;
          justify-content: center;
          align-items: center;
@@ -118,19 +116,21 @@
          text-align: center;
          opacity: 0;
       }
-      </style>
+
+      .error {
+         border: 2px solid red;
+      }
+   </style>
 </head>
 
 <body>
    <div class="wrapper">
-      <h3>Регистрация</h3>
-      <form name="reg" class="regForm">
-         <input type="text" placeholder="Имя" id="firstname" name="firstname">
-         <input type="text" placeholder="Фамилия" id="lastname" name="lastname">
-         <input type="email" placeholder="Почта" id="email" name="email">
-         <input type="password" placeholder="Пароль" id="password" name="password">
-         <button>Продолжить</button>
-         <a href="../signin/">Войти в аккаунт</a>
+      <h3>Добавить транзакцию</h3>
+      <form name="addtransaction" class="loginForm">
+         <input type="text" placeholder="Из кошелька" id="fromWallet" name="fromWallet">
+         <input type="text" placeholder="Сумма" id="sum" name="price">
+         <input type="text" placeholder="Категория" id="categories" name="categories">
+         <button>Добавить</button>
       </form>
       <div class="info">
          <p>Все поля обязательны для правельного заполнения</p>

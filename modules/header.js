@@ -1,54 +1,73 @@
-let navItems = {
-  0: 'Главная',
-  1: 'Мои кошельки',
-  2: 'Мои транзакции'
+let userData = JSON.parse(localStorage.getItem('user'));
+let textsMap = {
+   0: 'Главная',
+   1: 'Мои кошельки',
+   2: 'Мои транзакции'
 }
-
-let navItemLinks = {
-  0: '/',
-  1: '/pages/wallet/',
-  2: '/pages/transaction/'
+let linksMap = {
+   0: '/',
+   1: '/pages/cards/',
+   2: '/pages/transaction/'
 }
-
-let localData = JSON.parse(localStorage.getItem('user'))
-
 export function reloadHeader() {
-  let header = document.querySelector('.header')
-  let container = document.createElement('div')
-  let navbar = document.createElement('nav')
-  let navList = document.createElement('ul')
-  for (const item of [0,1,2]) {
-    let navItem = document.createElement('li')
-    let navItemLink = document.createElement('a')
+   let doc = document;
+   let body = doc.body;
+   let header = doc.createElement('header');
+   let container = doc.createElement('div');
+   let nav = doc.createElement('nav');
+   for (let i of [0, 1, 2]) {
+      let a = doc.createElement('a');
+      //style
+      a.classList.add('header__text');
+      //inner
+      a.innerText = textsMap[i];
+      a.href = linksMap[i];
+      //append
+      nav.append(a);
+   }
+   let userMenu = doc.createElement('div');
+   let email = doc.createElement('a');
+   let img = doc.createElement('img');
 
-    navItem.classList.add('nav-item')
-    navItemLink.innerHTML = navItems[item]
-    navItemLink.href = navItemLinks[item]
+   //style
+   header.classList.add('header');
+   container.className = 'header__container  container';
+   nav.classList.add('header__nav');
+   userMenu.classList.add('header__user-menu');
+   email.classList.add('header__text');
 
-    navItem.append(navItemLink)
-    navList.append(navItem)
-  }
-  let profile = document.createElement('div')
-  let profileEmail = document.createElement('div')
-  let profileImg = document.createElement('img')
+   //inner
+   email.innerText = userData.email;
+   img.src = '../../public/icons/exit.svg';
+   img.alt = 'exit';
+   img.height = '18';
+   img.width = '18';
 
-  container.classList.add('container')
-  navbar.classList.add('navbar')
-  navList.classList.add('nav-list')
-  profile.classList.add('profile')
-  profileEmail.classList.add('profile-email')
-  profileImg.classList.add('profile-img')
+   //append
+   userMenu.append(email, img);
+   container.append(nav, userMenu);
+   header.append(container);
+   body.prepend(header);
 
-  profileEmail.innerHTML = localData.email
-  profileImg.src = '/public/icons/log-out.svg'
+   // modal
+   let modal = doc.querySelector('.modal');
+   let btn_true = doc.querySelector('[data-true]');
+   let btn_false = doc.querySelector('[data-false]');
+   img.onclick = () => {
+      modal.classList.add('show', 'fade')
+   }
 
-  profile.append(profileEmail, profileImg)
-  navbar.append(navList, profile)
-  container.append(navbar)
-  header.append(container)
-
-  profileImg.onclick = () => {
-    localStorage.removeItem('user')
-    location.assign('/pages/login/')
-  }
+   let closeBtns = document.querySelectorAll('[data-close]')
+   closeBtns.forEach((btn) => {
+      btn.onclick = () => {
+         modal.classList.remove('show', 'fade')
+      }
+   })
+   btn_true.onclick = () => {
+      localStorage.clear();
+      location.assign('/pages/signin/');
+   }
+   btn_false.onclick = () => {
+      modal.classList.remove('show', 'fade')
+   }
 }

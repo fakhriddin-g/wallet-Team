@@ -1,35 +1,59 @@
 {
   "users": [
     {
-      "email": "azza.fayzieva@gmail.com",
-      "name": "Fakhriddin",
-      "surname": "Mirakov",
-      "password": "FA243546#sfff",
+      "firstname": "Shawkat",
+      "lastname": "Normurodov",
+      "email": "timanormu@gmail.com",
+      "password": "1234Shavkat",
       "id": 1
     },
     {
-      "email": "davronsoevr7@gmail.com",
-      "name": "Sarboz",
-      "surname": "Fakhriddin",
-      "password": "KHSKDfalgkad34967$",
+      "firstname": "Daler",
+      "lastname": "Sharifkulov",
+      "email": "dsarifkulo021@gmail.com",
+      "password": "1234Daler",
       "id": 2
-    },
-    {
-      "email": "gayosiddinov98@gmail.com",
-      "name": "Sarboz",
-      "surname": "Fakhriddin",
-      "password": "KJSHDkahkdshgk9374967$",
-      "id": 3
     }
   ],
   "cards": [
     {
+      "id": "87748753-e6e1-4ebf-9ee1-6b223b0b5a29",
       "user_id": 1,
       "name": "Visa",
-      "currency": "EUR",
-      "balance": "258",
-      "id": 1
+      "balance": "12000",
+      "currency": "USD"
+    },
+    {
+      "id": "736f5c24-74bf-4411-80ea-6c647ce17878",
+      "user_id": 1,
+      "name": "Ozodgdewifi",
+      "balance": "140000",
+      "currency": "UZS"
+    },
+    {
+      "id": "559dfbb2-c44b-44e7-8368-873ed57501f2",
+      "user_id": 2,
+      "name": "Humo",
+      "balance": "10000",
+      "currency": "dirhum"
+    },
+    {
+      "id": "c1d2778e-757c-490a-8169-191a698c42fb",
+      "user_id": 1,
+      "name": "Visa",
+      "balance": "258000",
+      "currency": "USD"
     }
   ],
-  "transactions": []
+  "transaction": [
+    {
+      "fromWallet": "123",
+      "price": "123456",
+      "categories": "auto",
+      "userId": 1,
+      "time": "4 дня назад",
+      "welletId": 1,
+      "id": 1
+    }
+  ]
 }

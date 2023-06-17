@@ -1,69 +1,45 @@
-let localData = JSON.parse(localStorage.getItem('user'))
-
-let wellcomText = {
-  0: 'Добро пожаловать',
-  1: 'Мои кошельки',
-  2: 'Мои транзакции'
+export function reload(arr, place) {
+    let doc = document
+    place.innerHTML = '';
+    for (let card of arr) {
+        let div = doc.createElement('div');
+        let title = doc.createElement('div');
+        let lang = doc.createElement('div');
+        //class
+        div.classList.add('item');
+        title.classList.add('item__title');
+        lang.classList.add('item__lang');
+        //inner
+        title.innerHTML = card.name;
+        lang.innerHTML = card.currency;
+        div.style.background = "red"
+        //append
+        div.append(title, lang);
+        place.append(div);
+    }
 }
-
-let tableHeaders = ['ID', 'Отправлено с кошелька', 'Категория ', 'Сумма транзации', 'Когда']
-
-
-export function reloadWallet(arr, place) {
-  place.innerHTML = ""
-
-  for (const wallet of arr) {
-    let walletBox = document.createElement('div')
-    let walletName = document.createElement('span')
-    let walletCuurency = document.createElement('span')
-
-    walletBox.classList.add('wallet-box')
-    walletName.classList.add('wallet-name')
-    walletCuurency.classList.add('wallet-currency')
-
-    walletBox.style.background = '#' + Math.floor(Math.random()*16777215).toString(16)
-    walletName.innerHTML = wallet.name
-    walletCuurency.innerHTML = wallet.currency
-
-    walletBox.append(walletName, walletCuurency)
-    place.append(walletBox)
-  }
-
-}
-
-export function reloadTransaction(arr, place) {
-  place.innerHTML =""
-
-  let transactionTable = document.createElement('table')
-  let tableHeader = document.createElement('thead')
-  let tableHeaderRow = document.createElement('tr')
-  for (const head of tableHeaders) {
-    let tableHead = document.createElement('th')
-
-    tableHead.innerHTML = head
-
-    tableHeaderRow.append(tableHead)
-  }
-  let tableBody = document.createElement('tbody')
-  for (const body of arr) {
-    let tableBodyRow = document.createElement('tr')
-    let id = document.createElement('td')
-    let wallet = document.createElement('td')
-    let category = document.createElement('td')
-    let transaction = document.createElement('td')
-    let time = document.createElement('td')
-
-    id.innerHTML = body.id
-    wallet.innerHTML = body.wallet
-    category.innerHTML = body.category
-    transaction.innerHTML = body.balance
-    time.innerHTML = body.date
-
-    tableBodyRow.append(id, wallet, category, transaction, time)
-    tableBody.append(tableBodyRow)
-  }
-
-  tableHeader.append(tableHeaderRow)
-  transactionTable.append(tableHeader, tableBody)
-  place.append(transactionTable)
+export function reloadTable(res, body) {
+    let doc = document;
+    body.innerHTML = ''
+    let n = 1;
+    for (let data of res) {
+        let tr = doc.createElement('tr');
+        for (let i = 0; i < 5; i++) {
+            let td = doc.createElement('td');
+            if (i === 0) {
+                td.innerText = n;
+            } else if (i === 1) {
+                td.innerText = data.fromWallet;
+            } else if (i === 2) {
+                td.innerText = data.categories;
+            } else if (i === 3) {
+                td.innerText = data.price;
+            } else if (i === 4) {
+                td.innerText = data.time;
+            }
+            tr.append(td);
+        }
+        body.append(tr);
+        n++;
+    }
 }

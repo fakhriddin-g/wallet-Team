@@ -1,6 +1,5 @@
+let user = JSON.parse(localStorage.getItem('user'));
 
-let localedUser = JSON.parse(localStorage.getItem('user'))
-
-if (!localedUser) {
-  location.assign('/pages/login/')
+if (!user) {
+    location.assign('/pages/signin/')
 }
