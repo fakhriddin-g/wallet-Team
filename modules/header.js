@@ -1,9 +1,9 @@
-import { modal, modal_bg } from "../main"
 import { user } from "./user"
 
 export function header() {
     let body = document.body
-    // let localedData = JSON.parse(localStorage.getItem("user"))
+    let modal = document.querySelector(".modal")
+    let modal_bg = document.querySelector(".modal_bg")
 
     let header = document.createElement("header")
     let nav = document.createElement("nav")
@@ -57,5 +57,24 @@ export function header() {
             hide.innerHTML = "X"
         }
     }
+
+    let close = document.querySelectorAll(".close")
+    let sign_out = document.querySelector(".modal button")
+    sign_out.onclick = () => {
+        location.assign("/pages/about/")
+        localStorage.removeItem("user")
+    }
+
+    close.forEach(btn => {
+        btn.onclick = () => {
+            modal.style.opacity = "0"
+            modal_bg.style.opacity = "0"
+            modal.style.scale = "0"
+            setTimeout(() => {
+                modal.style.display = "none"
+                modal_bg.style.display = "none"
+            }, 300);
+        }
+    })
 
 }

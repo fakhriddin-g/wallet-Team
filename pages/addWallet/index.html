@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/client.css">
     <link rel="stylesheet" href="/style/loader.css">
     <title>Document</title>
     <script type="module" src="/modules/guard.js"></script>
@@ -14,11 +14,11 @@
 <body>
     <center>
         <h1>Add a wallet</h1>
-        <select id="currency" name="valuta" placeholder="Valuta"></select>
         <form name="addWallet">
             <input type="text" name="name" placeholder="Name">
             <input type="number" name="balance" placeholder="Balance">
-            <input type="text" name="valuta" placeholder="Valuta">
+            <input list="valuta-list" name="valuta" placeholder="Valuta">
+            <datalist id="valuta-list"></datalist>
             <button>Add</button>
         </form>
     </center>

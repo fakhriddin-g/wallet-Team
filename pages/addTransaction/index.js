@@ -1,7 +1,7 @@
 import { getData, postData } from "../../modules/http.requests.js"
 import { validate } from "../../modules/regex.js"
 import { v4 as uuidv4 } from 'uuid';
-import { card, user } from "../../modules/user.js";
+import { user } from "../../modules/user.js";
 
 let addTransaction = document.forms.addTransaction
 let inp = addTransaction.querySelector('input')
@@ -48,11 +48,11 @@ addTransaction.onsubmit = (e) => {
             fm.forEach((value, key) => {
                 transaction[key] = value
             })
-            
+
             postData("/transactions", transaction)
                 .then(res => {
                     location.assign("/pages/myTransaction/")
-                })  
+                })
         }
     }
 }

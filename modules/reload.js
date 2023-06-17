@@ -1,3 +1,21 @@
+function getRandomColors() {
+    function getRGB() {
+        function randomaizer() {
+            return Math.floor(Math.random() * 255)
+        }
+
+        let r = randomaizer()
+        let g = randomaizer()
+        let b = randomaizer()
+        return `${r},${g},${b}`
+    }
+    function randomaizerDeg() {
+        return Math.floor(Math.random() * 255)
+    }
+    let d = randomaizerDeg()
+    return `linear-gradient(${d}deg, rgba(${getRGB()},1), rgba(${getRGB()},1))`
+}
+
 export function reloadWallet(arr, place) {
     place.innerHTML = ""
 
@@ -10,8 +28,7 @@ export function reloadWallet(arr, place) {
         h3.innerHTML = item.name
         p.innerHTML = item.valuta
 
-        card.style.background = "red"
-        //  `linear-gradient(84.37deg, ${item.color[0]} 2.27%, ${item.color[1]} 92.26%`
+        card.style.background = getRandomColors()
 
         card.append(h3, p)
         place.append(card)
@@ -39,15 +56,5 @@ export function reloadTransactions(arr, place) {
         place.append(tr)
     }
 }
-export function reloadCurrency(arr, place) {
-    place.innerHTML = ""
 
-    for (let item of arr) {
-        let option = document.createElement("option")
 
-        // card.classList.add("card")
-        option.innerHTML = item
-
-        place.append(option)
-    };
-}

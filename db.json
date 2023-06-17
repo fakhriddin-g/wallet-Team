@@ -1,23 +1,28 @@
 {
-  "users": [],
-  "cards": [
+  "users": [
     {
-      "id": "3c8753a3-2b2d-4ea6-8a38-a17626c98074",
-      "user_id": 0.8890849395915865,
-      "name": "Daler",
-      "balance": "2222",
-      "valuta": "111"
+      "name": "Refat",
+      "surname": "Islyamov",
+      "email": "refabatya@gmail.com",
+      "pass": "3214rt",
+      "id": 1
+    },
+    {
+      "name": "Андрей",
+      "surname": "Кузнецов",
+      "email": "elvira.axmedova@merospharm.uz",
+      "pass": "3214rt",
+      "id": 2
     }
   ],
-  "transactions": [
+  "cards": [
     {
-      "id": "4b67e643-691a-4aeb-bddc-a5a8a301602b",
-      "user_id": 0.8890849395915865,
-      "card_id": "3c8753a3-2b2d-4ea6-8a38-a17626c98074",
-      "date": 15,
-      "name": "Daler",
-      "category": "car",
-      "sum": "1000"
+      "id": "29918c9a-3069-4c17-b435-efe720e17c91",
+      "user_id": 1,
+      "name": "Visa",
+      "balance": "123123",
+      "valuta": "UZS"
     }
-  ]
+  ],
+  "transactions": []
 }
