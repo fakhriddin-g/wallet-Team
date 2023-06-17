@@ -1,6 +1,22 @@
+function getRandomColors() {
+    function getRGB() {
+        function randomizer() {
+            return Math.floor(Math.random() * 255)        
+        }
+    
+        let r = randomizer()
+        let g = randomizer()
+        let b = randomizer()
+
+        return `${r},${g},${b}`
+    }
+    return `linear-gradient(84.36deg,rgba(${getRGB()}, 1),  rgba(${getRGB()}, 1))`
+}
+
 export function reload(arr, place) {
     let doc = document
     place.innerHTML = '';
+    
     for (let card of arr) {
         let div = doc.createElement('div');
         let title = doc.createElement('div');
@@ -12,10 +28,15 @@ export function reload(arr, place) {
         //inner
         title.innerHTML = card.name;
         lang.innerHTML = card.currency;
-        div.style.background = "red"
+        div.style.background = getRandomColors()
+        div.style.cursor = "pointer"
         //append
         div.append(title, lang);
         place.append(div);
+
+        div.onclick = () => {
+            location.assign('/pages/cards/card/?id=' + card.id)
+        }
     }
 }
 export function reloadTable(res, body) {

@@ -16,6 +16,7 @@ export default defineConfig({
             signin: resolve(__dirname, 'pages/signin/index.html'),
             signup: resolve(__dirname, 'pages/signup/index.html'),
             cards: resolve(__dirname, 'pages/cards/index.html'),
+            card: resolve(__dirname, 'pages/cards/card/index.html'),
             transaction: resolve(__dirname, 'pages/transaction/index.html'),
             addTransaction: resolve(__dirname, 'pages/addTransaction/index.html'),
             addWallet: resolve(__dirname, 'pages/addWallet/index.html'),
