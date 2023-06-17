@@ -29,9 +29,14 @@ export function reload(arr, place) {
         title.innerHTML = card.name;
         lang.innerHTML = card.currency;
         div.style.background = getRandomColors()
+        div.style.cursor = "pointer"
         //append
         div.append(title, lang);
         place.append(div);
+
+        div.onclick = () => {
+            location.assign('/pages/cards/card/?id=' + card.id)
+        }
     }
 }
 export function reloadTable(res, body) {
