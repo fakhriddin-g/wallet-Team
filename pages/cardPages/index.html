@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="../../sass/style.scss">
+   <style>
+      body {
+         font-family: sans-serif;
+      }
+
+      .wrap {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         margin-top: 60px;
+      }
+
+      .card {
+         width: calc(282px * 3);
+         height: calc(160px * 3);
+         position: relative;
+         perspective: 1200px;
+
+      }
+
+      .front,
+      .back {
+         border-radius: 45px;
+         padding: 53px 60px;
+         position: absolute;
+         width: 100%;
+         height: 100%;
+         left: 0;
+         top: 0;
+         transition: 1s;
+         backface-visibility: hidden;
+      }
+
+      .front {
+         display: flex;
+         justify-content: space-between;
+         flex-direction: column;
+      }
+
+      .front__lang,
+      .front__title {
+         font-size: 36px;
+         font-weight: 700;
+         color: #fff;
+      }
+
+      .back {
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+         transform: rotateY(180deg);
+         justify-content: center;
+         align-items: center;
+      }
+
+      .bank__text {
+         font-size: 24px;
+         font-weight: 500;
+         color: #fff;
+      }
+
+      .card:hover .front {
+         transform: rotateY(180deg);
+      }
+
+      .card:hover .back {
+         transform: rotateY(360deg);
+      }
+
+      .back__column {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         gap: 240px;
+         height: 100%;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="wrap">
+      <div class="card">
+         <div class="front" style="background-color: red;">
+            <div class="front__title">Visa</div>
+            <div class="front__lang">USD</div>
+         </div>
+         <div class="back" style="background-color: green;">
+            <div class="back__column">
+               <div class="back__balance bank__text">
+                  Баланс: <span>1000</span><span id="span_lang">cumm</span>
+               </div>
+               <div class="back__id bank__text">
+                  id: <span>1000</span>
+               </div>
+            </div>
+            <div class="back__column">
+               <div class="back__code bank__text">
+                  Код: <span>1000</span>
+               </div>
+               <div class="back__count-tr bank__text">
+                  Количество-транзакций: <span>1000</span>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="transaction container">
+      <div class="transaction__container">
+         <div class="transaction__title">
+            Все транзакции карты
+         </div>
+         <table class="table">
+            <thead>
+               <tr>
+                  <th>ID</th>
+                  <th>Отправлено с кошелька</th>
+                  <th>Категория </th>
+                  <th>Сумма транзации</th>
+                  <th>Когда</th>
+               </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+            <tfoot></tfoot>
+         </table>
+         </div>
+   </div>
+   <div class="modal">
+      <div class="modal__dialog">
+         <div class="modal__content">
+            <div data-close class="modal__close">&times;</div>
+            <div class="modal__title">Вы хотите <br> выйте с аккаунта</div>
+            <button class="btn btn_dark btn_min" data-true>ДА</button>
+            <button class="btn btn_dark btn_min" data-false>Нет</button>
+         </div>
+      </div>
+   </div>
+   <script src="index.js" type="module"></script>
+</body>
+
+</html>

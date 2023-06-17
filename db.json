@@ -17,22 +17,8 @@
   ],
   "cards": [
     {
-      "id": "87748753-e6e1-4ebf-9ee1-6b223b0b5a29",
-      "user_id": 1,
-      "name": "Visa",
-      "balance": "12000",
-      "currency": "USD"
-    },
-    {
-      "id": "736f5c24-74bf-4411-80ea-6c647ce17878",
-      "user_id": 1,
-      "name": "Ozodgdewifi",
-      "balance": "140000",
-      "currency": "UZS"
-    },
-    {
       "id": "559dfbb2-c44b-44e7-8368-873ed57501f2",
-      "user_id": 2,
+      "user_id": 2 ,
       "name": "Humo",
       "balance": "10000",
       "currency": "dirhum"
