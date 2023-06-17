@@ -55,13 +55,14 @@ function save() {
   });
 
   postData("/cards", walletData);
-  modalBg.style.display = "none";
+  // modalBg.style.display = "none";
 }
 
 inputs.forEach((input) => {
   modalBtn.onclick = () => {
     if (input.value) {
       save();
+      location.assign('/pages/wallet/')
     } else {
       alert("Fill all the inputs");
     }
@@ -91,11 +92,11 @@ function select(object) {
   }
 }
 
-axios.get(import.meta.env.VITE_CURRENCY_API, {
-  headers: {
-    apiKey: import.meta.env.VITE_API_KEY
-  }
-})
-.then((res) => {
-  select(res.data.symbols);
-})
+// axios.get(import.meta.env.VITE_CURRENCY_API, {
+//   headers: {
+//     apiKey: import.meta.env.VITE_API_KEY
+//   }
+// })
+// .then((res) => {
+//   select(res.data.symbols);
+// })

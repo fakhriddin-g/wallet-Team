@@ -45,6 +45,7 @@ form.onsubmit = (e) => {
 
 function save() {
   let transactionData = {
+    id: 1,
     user_id: user.id
   }
   
@@ -56,17 +57,23 @@ function save() {
   
   let newDate = (new Date().getMonth() + 1) + '/' + new Date().getDate() + '/' + new Date().getFullYear()
   transactionData.date = newDate
+  transactionData.wallet = JSON.parse(transactionData.wallet)
+  delete transactionData.wallet.currency
+  delete transactionData.wallet.user_id
+
  
-  console.log(transactionData);
   
-  postData('/transactions', transactionData)
-  modalBg.style.display = 'none'
+  // postData('/transactions', transactionData)
+  // modalBg.style.display = 'none'
+
+  console.log(transactionData);
 }
 
 inputs.forEach(input => {
   modalBtn.onclick = () => {
-    if (input.value || input.value !== '0') {
+    if (input.value) {
       save()
+      // location.assign('/pages/transaction/')
     }
     else {
       alert('Fill all the inputs')
@@ -77,7 +84,11 @@ inputs.forEach(input => {
 getData('/cards?user_id=' + user.id)
   .then(res => {
     if (res.status === 200 || res.status === 201) {
-      select(res.data)
+      for (const item of res.data) {
+        let option = new Option(item.name, JSON.stringify(item))
+        selectBox.append(option)
+      }
+      // select(res.data)
     }
   })
 

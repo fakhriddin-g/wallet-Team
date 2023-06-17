@@ -25,10 +25,33 @@
   "cards": [
     {
       "user_id": 1,
-      "name": "Visa",
-      "currency": "EUR",
+      "name": "MasterCard",
       "balance": "258",
       "id": 1
+    },
+    {
+      "user_id": 1,
+      "name": "Visa",
+      "balance": "256",
+      "id": 2
+    },
+    {
+      "user_id": 1,
+      "name": "Visa",
+      "balance": "215",
+      "id": 3
+    },
+    {
+      "user_id": 1,
+      "name": "Humo",
+      "balance": "2566",
+      "id": 4
+    },
+    {
+      "user_id": 1,
+      "name": "UZCard",
+      "balance": "123000",
+      "id": 5
     }
   ],
   "transactions": []
