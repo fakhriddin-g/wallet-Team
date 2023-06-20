@@ -25,34 +25,42 @@
   "cards": [
     {
       "user_id": 1,
-      "name": "MasterCard",
-      "balance": "258",
+      "name": "Visa",
+      "currency": "USD",
+      "balance": "256",
       "id": 1
     },
     {
       "user_id": 1,
-      "name": "Visa",
+      "name": "UZCard",
       "balance": "256",
       "id": 2
     },
     {
       "user_id": 1,
-      "name": "Visa",
-      "balance": "215",
+      "name": "Humo",
+      "balance": "254",
       "id": 3
     },
     {
       "user_id": 1,
-      "name": "Humo",
-      "balance": "2566",
+      "name": "MasterCard",
+      "balance": "200",
       "id": 4
-    },
-    {
-      "user_id": 1,
-      "name": "UZCard",
-      "balance": "123000",
-      "id": 5
     }
   ],
-  "transactions": []
+  "transactions": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "wallet": {
+        "name": "Visa",
+        "balance": "256",
+        "id": 1
+      },
+      "balance": "250",
+      "category": "Auto",
+      "date": "6/20/2023"
+    }
+  ]
 }

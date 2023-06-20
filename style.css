@@ -59,7 +59,7 @@ a {
 /* Home Page */
 /* Header */
 .header {
-  background-color: #F0F0F0;
+  background-color: #f0f0f0;
 }
 
 .container {
@@ -116,6 +116,16 @@ a {
   cursor: pointer;
 }
 
+.empty-wallet {
+  width: 282px;
+  height: 160px;
+  background-color: rgb(208, 208, 208);
+  border-radius: 15px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
 .all-wallets {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -166,7 +176,7 @@ table td {
   left: 0;
   background: #fff;
   color: #000;
-  transition: .5s ease;
+  transition: 0.5s ease;
   scale: 0;
 }
 
@@ -183,7 +193,7 @@ table td {
   background: rgb(220, 220, 220);
   color: #000;
   border-radius: 10px;
-  transition: .5s ease;
+  transition: 0.5s ease;
 }
 
 .modal {
@@ -202,7 +212,8 @@ table td {
   gap: 10px;
 }
 
-.wallet-form input, .select {
+.wallet-form input,
+.select {
   outline: none;
   height: 30px;
   padding: 0 10px;
@@ -210,13 +221,14 @@ table td {
   border-radius: 5px;
 }
 
-.wallet-form input:focus, .select:focus {
+.wallet-form input:focus,
+.select:focus {
   border-color: blue;
 }
 
 .select {
   display: block;
-  padding: .6em 1.4em .5em .8em;
+  padding: 0.6em 1.4em 0.5em 0.8em;
 }
 
 /* Close Modal */
@@ -238,7 +250,7 @@ table td {
   height: 15px;
   background-color: gray;
   border-radius: 100%;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .close:hover {
@@ -251,25 +263,13 @@ table td {
 
 /* Cards */
 .card-box {
-  margin: 30px 0;
+  margin: 30px 0 90px;
 }
 
 .card-info {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.card-image {
-  width: 282px;
-  height: 160px;
-  background-color: rgb(208, 208, 208);
-  border-radius: 15px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 36px;
 }
 
 .card-desc {

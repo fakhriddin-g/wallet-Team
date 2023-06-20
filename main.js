@@ -6,6 +6,7 @@ import { user } from "./modules/user"
 
 // Get Elements
 let allWallet = document.querySelector('.all-wallets')
+let emptyWallet = document.querySelector('.empty-wallet')
 let transactionTable = document.querySelector('.transaction-table')
 let welcomeName = document.querySelector('.welcome-name')
 let welcomeEmail = document.querySelector('.welcome-email')
@@ -23,6 +24,8 @@ getData('/cards?user_id=' + user.id)
     if (res.status === 200 || res.status === 201) {
       if (res.data.length > 0) {
         reloadWallet(res.data.slice(0, 4), allWallet)
+      } else {
+        emptyWallet.style.display = 'flex'
       }
     }
   })

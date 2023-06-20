@@ -16,6 +16,7 @@ let closeBtn = document.querySelector(".close");
 let minimizeBtn = document.querySelector(".minimize");
 let form = document.forms.wallet;
 let selectBox = document.querySelector(".select");
+let emptyWallet = document.querySelector(".empty-wallet");
 
 // HEader Reload Function
 reloadHeader();
@@ -26,7 +27,9 @@ welcomeEmail.innerHTML = user?.email;
 // Wallet Reload Function
 getData("/cards?user_id=" + user?.id).then((res) => {
   if (res.status === 200 || res.status === 201) {
-    if (res.data.length > 0) {
+    if (res.data.length <= 0) {
+      emptyWallet.style.display = "flex";
+    } else {
       reloadWallet(res.data, allWallet);
     }
   }
@@ -55,14 +58,13 @@ function save() {
   });
 
   postData("/cards", walletData);
-  // modalBg.style.display = "none";
+  location.assign("/pages/wallet/");
 }
 
 inputs.forEach((input) => {
   modalBtn.onclick = () => {
     if (input.value) {
       save();
-      location.assign('/pages/wallet/')
     } else {
       alert("Fill all the inputs");
     }
@@ -92,11 +94,11 @@ function select(object) {
   }
 }
 
-// axios.get(import.meta.env.VITE_CURRENCY_API, {
-//   headers: {
-//     apiKey: import.meta.env.VITE_API_KEY
-//   }
-// })
-// .then((res) => {
-//   select(res.data.symbols);
-// })
+axios.get(import.meta.env.VITE_CURRENCY_API, {
+  headers: {
+    apiKey: import.meta.env.VITE_API_KEY
+  }
+})
+.then((res) => {
+  select(res.data.symbols);
+})

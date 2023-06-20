@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="style.css">
   <title>Card</title>
 </head>
 <body>
@@ -13,12 +14,14 @@
   <div class="card-box">
     <div class="container">
       <div class="card-info">
-        <div class="card-image">Visa</div>
+        <div class="card-image">
+          <div id="inner"></div>
+        </div>
         <div class="card-desc">
-          <div class="card-user-name">ФИО: Fakhriddin</div>
-          <div class="card-name">Карта: Visa</div>
-          <div class="card-balance">Баланс: 200$</div>
-          <div class="card-currency">Валюта: USD</div>
+          <div class="card-user-name">ФИО:</div>
+          <div class="card-name">Карта:</div>
+          <div class="card-balance">Баланс:</div>
+          <div class="card-currency">Валюта:</div>
         </div>
         <div class="card-action">
           <div class="card-edite">Edite</div>
@@ -28,7 +31,9 @@
     </div>
   </div>
 
-  <div class="transaction"></div>
+  <div class="transaction">
+    <div class="container"></div>
+  </div>
 
   <script type="module" src="./main.js"></script>
 </body>

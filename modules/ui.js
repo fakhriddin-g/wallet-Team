@@ -35,7 +35,7 @@ export function reloadWallet(arr, place) {
     place.append(walletBox);
 
     walletBox.onclick = () => {
-      location.assign("/pages/card/");
+      location.assign("/pages/card/?id=" + wallet.id);
     };
   }
 }
@@ -63,7 +63,7 @@ export function reloadTransaction(arr, place) {
     let time = document.createElement("td");
 
     id.innerHTML = body.id;
-    wallet.innerHTML = body.wallet;
+    wallet.innerHTML = body.wallet.name;
     category.innerHTML = body.category;
     transaction.innerHTML = body.balance;
     time.innerHTML = body.date;
